@@ -1,0 +1,15 @@
+input:focus{
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(65, 150, 252,.3);
+  border: 1px solid rgb(65, 150, 252)!important;
+}
+textarea:focus{
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(65, 150, 252,.3);
+  border: 1px solid rgb(65, 150, 252)!important;
+}
+select:focus{
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(65, 150, 252,.3);
+  border: 1px solid rgb(65, 150, 252)!important;
+}

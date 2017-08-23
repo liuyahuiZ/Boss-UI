@@ -1,0 +1,44 @@
+.switch{
+  display: inline-block;
+  position: relative;
+  min-width: 44px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: #999;
+  line-height: 21px;
+  cursor: pointer;
+  transition: all .36s cubic-bezier(.78,.14,.15,.86);
+}
+.switch:after{
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 1px;
+  top: 2px;
+  border-radius: 18px;
+  background-color: #fff;
+  content: " ";
+  cursor: pointer;
+  -webkit-transition: all .36s cubic-bezier(.78,.14,.15,.86);
+  transition: all .36s cubic-bezier(.78,.14,.15,.86);
+  box-sizing: border-box
+}
+.switch-checked{
+  background: rgb(65, 150, 252);
+}
+.switch-checked:after{
+  left: 100%;
+  margin-left: -19px;
+}
+.switch-inner{
+  color: #fff;
+  font-size: 12px;
+  margin-left: 24px;
+  margin-right: 6px;
+  display: inline-block;
+}
+.switch-checked .switch-inner{
+  margin-left: 6px;
+  margin-right: 24px;
+}

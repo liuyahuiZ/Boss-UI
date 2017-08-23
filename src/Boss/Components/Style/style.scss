@@ -1,0 +1,64 @@
+$width:200px;
+$height:200px;
+$btnWidth:60px;
+$border:1px solid rgb(169, 169, 169);
+$dashed:1px #CCCCCC dashed;
+$lh30:30px;
+$liBg:#108ee9;
+
+.transfer-items ul{
+  padding: 0;
+  margin: 0;
+}
+.transfer-items li{
+  list-style: none;
+
+}
+.transfer-items .clear-fix:after{display:block; content:"clear"; height:0; clear:both; overflow:hidden; visibility:hidden;}
+.transfer-block{
+  &>div{
+    float: left;
+  }
+  .transfer-items{
+    width:$width;
+    ul{
+      height:$height;
+      border: $border;
+      overflow: auto;
+      padding-start:0px;
+      li{
+        border-bottom:$dashed ;
+        &>a{
+          display: block;
+          color:#333;
+          text-decoration: none;
+          &.select{
+            background-color: $liBg;
+            color:#fff;
+          }
+          /*&:hover{
+            background-color: $liBg;
+            color:#fff;
+            cursor: pointer;
+          }*/
+        }
+
+      }
+    }
+  }
+  .transfer-btns{
+    margin: 0px 15px;
+    margin-top: 10px;
+    .btn{
+      border: $border;
+      width: $btnWidth;
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+      line-height: $lh30;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+  }
+}
+
