@@ -22,14 +22,7 @@ module.exports = {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
       use: {
-        loader: 'babel-loader',
-        query: {
-          plugins: [
-            ['import', [{ libraryName: "antd", style: true }]],
-          ],
-          cacheDirectory: true,
-          presets: ['react', 'es2015']
-        }
+        loader: 'babel-loader'
       }
     },{
         test: /\.scss$/,

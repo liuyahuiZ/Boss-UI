@@ -4,6 +4,9 @@ export default {
     position: 'relative',
     width: '100%',
     overflow: 'hidden',
+    borderRadius: '3px',
+    border: '1px solid #eee',
+    boxSizing: 'border-box'
   },
   panel: {
     float: 'left',
@@ -11,8 +14,7 @@ export default {
     position: 'relative',
     width: '100%',
     overflow: 'hidden',
-    backgroundColor: '#f5f5f5',
-    borderBottom: '1px solid #d9d9d9',
+    backgroundColor: '#fff',
   },
   panelHeader: {
     float: 'left',
@@ -21,7 +23,8 @@ export default {
     cursor: 'pointer',
     width: '100%',
     zIndex: '10',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#fff',
+    boxSizing: 'border-box'
   },
   show: {
     width: '100%',
@@ -36,7 +39,8 @@ export default {
     position: 'relative',
     padding: '5px',
     width: '100%',
-    zIndex: '8'
+    zIndex: '8',
+    boxSizing: 'border-box'
   },
   icon: {
     display: 'inline-block',

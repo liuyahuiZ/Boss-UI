@@ -141,22 +141,23 @@ class Tree extends Component {
   }
   loop = data => data.map((item) => {
     const arr = this.state.checkArr;
-    const { checkable, display } = this.props;
+    const { checkable, display, activeNode } = this.props;
+    const actived = activeNode && activeNode === item.title;
     const checkStatus = arr[item.key] ? arr[item.title].checkStatus : 'unchecked';
     if (item.children) {
       return (
         <TreeNode
-          prekey={item.preKey} key={item.key} title={item.title} onCheck={this.onCheck}
+          prekey={item.preKey} key={item.key} title={item.title} link={item.link} onCheck={this.onCheck}
           onDelAmb={this.onDelAmb} checkStatus={checkStatus} checkable={checkable}
-          display={display}
+          display={display} active={actived}
         >
           {this.loop(item.children)}
         </TreeNode>
       );
     }
     return (<TreeNode
-      prekey={item.preKey} key={item.key} title={item.title} onCheck={this.onCheck}
-      onDelAmb={this.onDelAmb} checkStatus={checkStatus} checkable={checkable}
+      prekey={item.preKey} key={item.key} title={item.title} link={item.link} onCheck={this.onCheck}
+      onDelAmb={this.onDelAmb} checkStatus={checkStatus} checkable={checkable} active={actived}
       display={display}
     />);
   });
@@ -174,13 +175,15 @@ class Tree extends Component {
 Tree.propTypes = {
   Date: PropTypes.arrayOf(PropTypes.shape({})),
   checkable: PropTypes.bool,
-  display: PropTypes.string
+  display: PropTypes.string,
+  activeNode: PropTypes.string,
 };
 
 Tree.defaultProps = {
   Date: [],
   checkable: false,
-  display: 'hide'
+  display: 'hide',
+  activeNode: ''
 };
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router'
 import * as arrayUtils from '../../utils/array';
 import Icon from '../Icon';
 import styles from './style';
@@ -65,22 +66,27 @@ class TreeNode extends Component {
     if (!this.props.checkable) {
       checkbox = '';
     }
+    const actived = this.props.active ? styles.active : ''
 
     if (Children) {
       if (Children.length === 0) {
-        item = (<div style={styles.painner}>
+        item = (<div style={arrayUtils.merge([styles.painner])}>
           <span onClick={() => { self.toggle(); }} style={styles.switch} />
           {checkbox}
-          <span className="text" style={styles.text}>{this.props.title}</span></div>);
+          <span className="text" style={arrayUtils.merge([styles.text, actived])}>{this.props.title}</span></div>);
       } else {
-        span = (<div style={styles.painner}>
+        span = (<div style={arrayUtils.merge([styles.painner])}>
           <span onClick={() => { self.toggle(); }} style={styles.switch}><Icon iconName={self.state.iconName} size={'110%'} /></span>
           {checkbox}
-          <span className="text" style={styles.text}>{this.props.title}</span></div>);
+          <span className="text" style={arrayUtils.merge([styles.text, actived])}>{this.props.title}</span></div>);
         item = (<ul style={arrayUtils.merge([styles.ul, styles.childPadding, display])}>
           {Children}</ul>);
       }
     }
+    if(this.props.link){
+       item = (<Link to={this.props.link}>{item}</Link>)
+    }
+
     return (
       <li className="trans" style={arrayUtils.merge([styles.li])}>
         {span}{item}
@@ -96,7 +102,8 @@ TreeNode.propTypes = {
   onCheck: PropTypes.func,
   onDelAmb: PropTypes.func,
   checkable: PropTypes.bool,
-  display: PropTypes.string
+  display: PropTypes.string,
+  active: PropTypes.bool,
 };
 
 TreeNode.defaultProps = {
@@ -104,6 +111,7 @@ TreeNode.defaultProps = {
   title: '',
   checkStatus: 'unchecked',
   checkable: false,
+  active: false,
   prekey: '',
   display: 'hide',
   onCheck: () => {},

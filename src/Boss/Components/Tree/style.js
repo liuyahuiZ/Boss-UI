@@ -51,5 +51,9 @@ export default {
     backgroundColor: '#108ee9',
     border: '1px solid #108ee9',
     borderRadius: '2px',
+  },
+  active: {
+    backgroundColor: '#1FA1FF',
+    color: '#fff'
   }
 };

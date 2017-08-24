@@ -22,7 +22,8 @@ import Progress from './Progress';
 import FileUp from './FileUp';
 import Icon from './Icon';
 import LabelGroup from './Label';
-import Tree from './Tree';
+import MyTree from './Tree';
+import Tree from './Tree/tree';
 import Carousel from './Carousel';
 import Collapse from './Collapse';
 import Panel from './Collapse/Panel';
@@ -60,6 +61,7 @@ export {
   FileUp,
   Icon,
   LabelGroup,
+  MyTree,
   Tree,
   Carousel,
   Collapse,

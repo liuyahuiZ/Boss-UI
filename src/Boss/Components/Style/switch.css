@@ -9,6 +9,8 @@
   line-height: 21px;
   cursor: pointer;
   transition: all .36s cubic-bezier(.78,.14,.15,.86);
+  margin-left: 1px;
+  margin-top: 1px;
 }
 .switch:after{
   position: absolute;
