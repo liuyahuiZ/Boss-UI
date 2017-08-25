@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
-import {Components, Parts, utils} from 'boss';
+import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
 import icons from '../common/icon';
 import '../../Style/comment.css'

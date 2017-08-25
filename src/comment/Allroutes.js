@@ -33,7 +33,8 @@ class MyRouter extends Component{
   render() {
     return (
     <Router history={hashHistory}>
-      <Route path={'/'} component={App} />
+      <IndexRedirect to="/info/index" />
+      <Route path={'/'} component={AllComponent} />
       <Route path={'index'} component={Index} />
       <Route path={'info'} component={AllComponent} >
         <Route path={'index'} component={Info} />
