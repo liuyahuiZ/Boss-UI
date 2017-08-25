@@ -1,4 +1,5 @@
 import Button from './Button';
+import Buttons from './Button/button';
 import Input from './Input';
 import Pagination from './Pagination';
 import DatePicker from './DatePicker';
@@ -34,6 +35,7 @@ const { Table, TableRowColumn, TableRow, TableHeaderRow } = Tables;
 
 export {
   Button,
+  Buttons,
   Input,
   Pagination,
   DatePicker,
@@ -61,8 +63,8 @@ export {
   FileUp,
   Icon,
   LabelGroup,
-  MyTree,
   Tree,
+  MyTree,
   Carousel,
   Collapse,
   Panel,

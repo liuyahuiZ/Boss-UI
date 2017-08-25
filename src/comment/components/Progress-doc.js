@@ -57,17 +57,29 @@ class ProgressDoc extends Component {
       
     render() {
         return(
-          <Row justify={'flex-start'} align={'flex-start'}>
-          <Col span={24}>
-            <Progress percent={30} barColor={'#F96C43'} radius={10} />
-            <Progress percent={57} barColor={'#76BFDC'} radius={10} />
-            <Progress percent={99} barColor={'#FF6157'} radius={10} />
-          </Col>
-          <Col span={12}>
-            <Progress percent={40} barColor={'#79D46D'} radius={10} />
-            <Progress percent={80} />
-          </Col>
-        </Row>
+          <section className="doc">
+          <Row>
+            <Col span={24}>
+              <h2>Progress 进度条</h2>
+              <div>用于展示操作进度，告知用户当前状态和预期</div>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Progress percent={30} barColor={'#F96C43'} radius={10} />
+              <Progress percent={57} barColor={'#76BFDC'} radius={10} />
+              <Progress percent={99} barColor={'#FF6157'} radius={10} />
+            </Col>
+            <Col span={24}>
+              <h3>长度根据外层容器长度变化</h3>
+            </Col>
+            <Col span={12} style={styles.codeBox}>
+              <Progress percent={40} barColor={'#79D46D'} radius={10} />
+              <Progress percent={80} />
+            </Col>
+          </Row>
+          </section>
         );
     }
 }

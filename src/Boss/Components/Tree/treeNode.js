@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router'
+import { Link } from 'react-router'
 import * as arrayUtils from '../../utils/array';
 import Icon from '../Icon';
 import styles from './style';
@@ -66,7 +66,7 @@ class TreeNode extends Component {
     if (!this.props.checkable) {
       checkbox = '';
     }
-    const actived = this.props.active ? styles.active : ''
+    const actived = this.props.active ? styles.active : '';
 
     if (Children) {
       if (Children.length === 0) {
@@ -83,8 +83,8 @@ class TreeNode extends Component {
           {Children}</ul>);
       }
     }
-    if(this.props.link){
-       item = (<Link to={this.props.link}>{item}</Link>)
+    if (this.props.link) {
+      item = (<Link to={this.props.link}>{item}</Link>);
     }
 
     return (
@@ -104,6 +104,7 @@ TreeNode.propTypes = {
   checkable: PropTypes.bool,
   display: PropTypes.string,
   active: PropTypes.bool,
+  link: PropTypes.string,
 };
 
 TreeNode.defaultProps = {
@@ -114,6 +115,7 @@ TreeNode.defaultProps = {
   active: false,
   prekey: '',
   display: 'hide',
+  link: '',
   onCheck: () => {},
   onDelAmb: () => {},
 };

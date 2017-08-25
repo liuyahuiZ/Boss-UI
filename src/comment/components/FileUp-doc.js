@@ -57,7 +57,19 @@ class DatepickerDoc extends Component {
       
     render() {
         return(
-          <FileUp />
+          <section className="doc">
+          <Row>
+          <Col span={24}>
+            <h2>FileUp 文件上传</h2>
+          </Col>
+          <Col span={24}>
+            <h3>基础用法</h3>
+          </Col>
+          <Col span={24} style={styles.codeBox}>
+            <FileUp />
+          </Col>
+          </Row>
+          </section>
         );
     }
 }

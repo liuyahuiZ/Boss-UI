@@ -58,20 +58,37 @@ class RadioDoc extends Component {
     render() {
         const checkboxOptions = [{ value: 1, text: 'haha', checked: true }, { value: 2, text: 'haha2' }, { value: 3, text: 'haha3', disabled: true }];
         return(
-            <Row style={{minHeight: '500px'}}>
+            <section className="doc">
+            <Row>
             <Col span={24}>
+              <h2>Radio 单选框</h2>
+              <div>在一组备选项中进行单选</div>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
             <Radio
                 options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2', checked: true }]}
                 onChange={click}
             />
-            <br />
-            <Checkbox
+            </Col>
+            <Col span={24}>
+              <h2>Checkbox 多选框</h2>
+              <div>一组备选项中进行多选</div>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Checkbox
                 ref={(checkbox) => { dom.checkbox = checkbox; }}
                 options={checkboxOptions}
                 onChange={click}
-            />
+              />
             </Col>
           </Row>
+          </section>
         );
     }
 }

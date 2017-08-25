@@ -57,61 +57,87 @@ class InputDoc extends Component {
       
     render() {
         return(
+          <section className="doc">
             <Row>
             <Col span={24}>
-            <Input
-            placeholder="我是placeholder"
-            style={marginStyle}
-            maxLength={10}
-            maxLengthShow={false}
-            disabled
-            />
-            <Input
-            ref={(input) => { dom.input = input; }}
-            placeholder="我是placeholder"
-            style={marginStyle}
-            maxLength={10}
-            />
-            <Input
-            value="我是value"
-            style={marginStyle}
-            maxLength={100}
-            />
-            <Input
-            placeholder="请输入"
-            style={marginStyle}
-            typeStyle="half"
-            maxLength={100}
-            />
-            <br />
-            <Textarea
-            value="我是文本"
-            style={marginStyle}
-            maxLengthShow={false}
-            disabled
-            />
-            <Textarea
-            placeholder="我是placeholder"
-            style={marginStyle}
-            />
-            <Textarea
-            value="我是value"
-            style={marginStyle}
-            maxLength={100}
-            />
-            <Textarea
-            value="我是value"
-            style={marginStyle}
-            maxLength={100}
-            typeStyle="half"
-            />
-            <RichEditor />
-            <Dynamic
-            WrappedComponent={Button}
-            text="提交"
-            />
+              <h2>Input 输入框</h2>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Input
+              ref={(input) => { dom.input = input; }}
+              placeholder="我是placeholder"
+              style={marginStyle}
+              maxLength={10}
+              />
+              <Input
+              value="我是value"
+              style={marginStyle}
+              maxLength={100}
+              />
+              <Input
+              placeholder="请输入"
+              style={marginStyle}
+              typeStyle="half"
+              maxLength={100}
+              />
+            </Col>
+            <Col span={24}>
+              <h3>禁用状态</h3>
+            </Col>
+            <Col style={styles.codeBox}>
+              <Input
+              placeholder="我是placeholder"
+              style={marginStyle}
+              maxLength={10}
+              maxLengthShow={false}
+              disabled
+              />
+            </Col>
+            <Col span={24}>
+              <h2>Textarea 文本框</h2>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col style={styles.codeBox}>
+              <Textarea
+              placeholder="我是placeholder"
+              style={marginStyle}
+              />
+              <Textarea
+              value="我是value"
+              style={marginStyle}
+              maxLength={100}
+              />
+              <Textarea
+              value="我是value"
+              style={marginStyle}
+              maxLength={100}
+              typeStyle="half"
+              />
+            </Col>
+            <Col span={24}>
+              <h3>禁用状态</h3>
+            </Col>
+            <Col style={styles.codeBox}>
+              <Textarea
+              value="我是文本"
+              style={marginStyle}
+              maxLengthShow={false}
+              disabled
+              />
+            </Col>
+            <Col span={24}>
+              <h3>富文本框</h3>
+            </Col>
+            <Col style={styles.codeBox}>
+              <RichEditor />
             </Col>
           </Row>
+        </section>
         );
     }
 }

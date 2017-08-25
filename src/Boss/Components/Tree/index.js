@@ -34,7 +34,6 @@ const generateData = (_level, _preKey, _tns) => {
   return tns;
 };
 generateData(z);
-console.log(gData);
 class MyTree extends Component {
   constructor(props) {
     super(props);

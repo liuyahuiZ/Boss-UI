@@ -47,6 +47,34 @@ const {
   } = Components;
   
 const { SearchPart, TablePart, DrawPart, EditPart, TransferPart } = Parts;
+const x = 3;
+const y = 2;
+const z = 2; // 层级
+const gData = [];
+
+const generateData = (_level, _preKey, _tns) => {
+  const preKey = _preKey || '0';
+  const tns = _tns || gData;
+
+  const children = [];
+  for (let i = 0; i < x; i++) {
+    const key = `${preKey}-${i}`;
+    tns.push({ title: key, key, preKey });
+    if (i < y) {
+      children.push(key);
+    }
+  }
+  if (_level < 0) {
+    return tns;
+  }
+  const level = _level - 1;
+  children.forEach((key, index) => {
+    tns[index].children = [];
+    return generateData(level, key, tns[index].children);
+  });
+  return tns;
+};
+generateData(z);
 class TreeDoc extends Component {
     constructor(props) {
       super(props);
@@ -57,7 +85,32 @@ class TreeDoc extends Component {
       
     render() {
         return(
-            <MyTree />
+            <section className="doc">
+            <Row>
+              <Col span={24}>
+                <h2>Tree 树形控件</h2>
+                <div>用清晰的层级结构展示信息，可展开或折叠。</div>
+              </Col>
+              <Col span={24}>
+                <h3>基础用法</h3>
+              </Col>
+              <Col span={24} style={styles.codeBox}>   
+                <Tree
+                    Date={gData}
+                />
+              </Col>
+              <Col span={24}>
+                <h3>带有选择框的树</h3>
+              </Col>
+              <Col span={24} style={styles.codeBox}>
+                <Tree
+                    Date={gData}
+                    display={'show'}
+                    checkable
+                />
+              </Col>
+            </Row>
+            </section>
         );
     }
 }

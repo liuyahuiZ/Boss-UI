@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as arrayUtils from '../../utils/array';
-import '../Style/font.css';
+import '../Style/icon.css';
 import styles from './style';
 
 class Icon extends Component {

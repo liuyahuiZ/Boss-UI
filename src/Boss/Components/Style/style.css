@@ -1,18 +1,17 @@
 .trans img{width: 100%}
 .options div:hover{
-    background: rgba(65, 150, 252,.3);
-    transition: all 300ms;
-  }
-  .selects:focus{outline:none}
-  .trans{
-    transition: all 300ms;
-  }
-  ul{
-    transition: all 300ms;
-  }
-  ul li .text:hover{
-    background: #d2eafb;
-    transition: all 300ms;
-  }
-
+  background: rgba(65, 150, 252,.3);
+  transition: all 300ms;
+}
+.selects:focus{outline:none}
+.trans{
+  transition: all 300ms;
+}
+ul{
+  transition: all 300ms;
+}
+ul li .text:hover{
+  background: #d2eafb;
+  transition: all 300ms;
+}
 a{color: #333}

@@ -60,26 +60,39 @@ class SwitchDoc extends Component {
           console.log(date);
         };
         return(
-          <Row justify={'flex-start'} align={'flex-start'}>
-        <Col span={3}>
-          <Switch />
-        </Col>
-        <Col span={3}>
-          <Switch checkedText={0} unCheckText={1} checked />
-        </Col>
-        <Col span={3}>
-          <Switch checkedText={'-'} unCheckText={'o'} onchange={switchChange} />
-        </Col>
-        <Col span={3}>
-          <Switch checkedText={0} unCheckText={1} bgColor={'#4BD963'} checked />
-        </Col>
-        <Col span={3}>
-          <Switch checkedText={0} unCheckText={1} bgColor={'#FF6157'} checked />
-        </Col>
-        <Col span={3}>
-          <Switch checkedText={0} unCheckText={1} bgColor={'#FFD479'} checked />
-        </Col>
-      </Row>
+          <section className="doc">
+              <Row>
+              <Col span={24}>
+                <h2>Switch 开关</h2>
+                <div>表示两种相互对立的状态间的切换，多用于触发「开/关」</div>
+              </Col>
+              <Col span={24}>
+                <h3>基础用法</h3>
+              </Col>
+              <Col span={24} style={styles.codeBox}>
+                <Row>
+                <Col span={3}>
+                  <Switch />
+                </Col>
+                <Col span={3}>
+                  <Switch checkedText={0} unCheckText={1} checked />
+                </Col>
+                <Col span={3}>
+                  <Switch checkedText={'-'} unCheckText={'o'} onchange={switchChange} />
+                </Col>
+                <Col span={3}>
+                  <Switch checkedText={0} unCheckText={1} bgColor={'#4BD963'} checked />
+                </Col>
+                <Col span={3}>
+                  <Switch checkedText={0} unCheckText={1} bgColor={'#FF6157'} checked />
+                </Col>
+                <Col span={3}>
+                  <Switch checkedText={0} unCheckText={1} bgColor={'#FFD479'} checked />
+                </Col>
+                </Row>
+              </Col>
+          </Row>
+        </section>
         );
     }
 }

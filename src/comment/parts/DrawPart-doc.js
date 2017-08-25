@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss';
 import styles from '../common/style';
-import icons from '../common/icon';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -113,11 +112,31 @@ class DrawPartDoc extends Component {
         canEdit: false
       };
         return(
-          <Row justify={'flex-start'} align={'flex-start'}>
-          <Col span={12}><DrawPart options={drawOptions} /></Col>
-          <Col span={12}><DrawPart options={drawOptions1} /></Col>
-          <Col span={12}><DrawPart options={drawOptions2} /></Col>
-        </Row>
+          <section className="doc">
+          <Row>
+            <Col span={24}>
+              <h2>DrawPart 坐标绘图组合</h2>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col span={16} style={styles.codeBox}>
+              <DrawPart options={drawOptions} />
+            </Col>
+            <Col span={24}>
+              <h3>不可点击状态</h3>
+            </Col>
+            <Col span={16} style={styles.codeBox}>
+              <DrawPart options={drawOptions1} />
+            </Col>
+            <Col span={24}>
+              <h3>去掉实线状态</h3>
+            </Col>
+            <Col span={16} style={styles.codeBox}>
+              <DrawPart options={drawOptions2} />
+            </Col>
+          </Row>
+          </section>
         );
     }
 }

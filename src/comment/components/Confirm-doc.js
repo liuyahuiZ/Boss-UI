@@ -17,6 +17,7 @@ const click = function (event) {
 };
 const {
     Button,
+    Buttons,
     Input,
     DatePicker,
     Textarea,
@@ -56,38 +57,128 @@ class ConfirmDoc extends Component {
     }
       
     render() {
+      const editItemList = [{
+        key: 'channelBankId',
+        text: '银行渠道',
+        type: 'select',
+        options: [{ value: '', text: '请选择' }, { value: 'jingu', text: '金谷农商行' }],
+        valid: 'required',
+        errorMsg: '请选择银行渠道',
+      }, {
+        key: 'loanProductType',
+        text: '贷款产品类型',
+        type: 'select',
+        options: [{
+          value: '', text: '请选择'
+        }, {
+          value: '01', text: '个人小额信贷'
+        }],
+        valid: 'required',
+        errorMsg: '请选择贷款产品类型',
+      }, {
+        key: 'loanProductName',
+        text: '贷款产品名称',
+        valid: 'required',
+        errorMsg: '请输入贷款产品名称',
+        format: v => utils.string.trim(v),
+      }, {
+        key: 'effectDayType',
+        text: '起息条件类型',
+        type: 'select',
+        value: '',
+        options: [{
+          text: '请选择', value: ''
+        }, {
+          text: '放款成功', value: '1'
+        }, {
+          text: '签约成功', value: '2'
+        }],
+        valid: 'required',
+        errorMsg: '请选择起息条件类型',
+      }, {
+        key: 'effectDay',
+        text: '起息日',
+        value: '',
+        type: 'select',
+        options: [{
+          text: '请选择', value: ''
+        }].concat(
+          utils.array.from({ length: 11 }, (a, b) => b)
+          .map(i => ({ text: i, value: i }))
+        ),
+        valid: 'required',
+        errorMsg: '请选择起息日',
+      }, {
+        key: 'openLoanTime',
+        text: '起始放贷时间',
+        type: 'date',
+        dateFormat: 'YYYY-MM-DD HH:mm',
+        valid: val => (val && +new Date(val) >= +new Date()),
+        errorMsg: '起始放贷时间不得小于当前时间',
+      }, {
+        key: 'closeLoanTime',
+        text: '结束放贷时间',
+        type: 'date',
+        dateFormat: 'YYYY-MM-DD HH:mm',
+        valid: val => (val && +new Date(val) >= +new Date()),
+        errorMsg: '结束放贷时间不得小于当前时间',
+      }];
         return(
-            <Row style={{minHeight: '500px'}}>
-            <Col span={24}>Confirm</Col>
+          <section className="doc">
+          <Row>
             <Col span={24}>
-              <Button
+              <h2>Confirm 消息对话框</h2>
+              <div>悬浮出现在页面上方，显示全局的通知提醒消息。</div>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
                 text="confirm"
-                type={['primary']}
+                type={'primary'}
                 style={marginStyle}
                 onClick={() => { Modal.confirm({ title: 'warning', content: 'this is a warning', type: 'small' }, () => { alert('this is sure callback'); }, () => { alert('this is cancle callback'); }); }}
               />
-              <Button
+              <Buttons
                 text="alert"
-                type={['primary']}
+                type={'primary'}
                 style={marginStyle}
                 onClick={() => { Modal.alert({ title: 'warning', content: 'this is a warning', type: 'middle' }, () => { console.log('alert'); }); }}
               />
-              <Button
+            </Col>
+            <Col span={24}>
+              <h3>多层弹出</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
                 text="mult open"
-                type={['primary']}
+                type={'primary'}
                 style={marginStyle}
+                plain
                 onClick={() => {
                   Modal.alert({ title: 'warning',
-                    content: (<div><a onClick={() => { Modal.confirm({ title: 'warning', content: 'this is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warning' }, () => { console.log('this is callback'); }, () => { console.log('this is cancle callback'); }); }} >click to do a new Alert</a></div>),
+                    content: (<div> others
+                      <Buttons
+                        text="click to do a new Alert "
+                        type={'link'}
+                        style={marginStyle} onClick={() => { Modal.confirm({ title: 'warning', content: 'this is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warning' }, () => { console.log('this is callback'); }, () => { console.log('this is cancle callback'); }); }}
+                      />
+                    </div>),
                     type: 'large',
                     style: 'primary',
                   },
                     () => { console.log('nult callback'); });
                 }}
               />
-              <Button
+            </Col>
+            <Col span={24}>
+              <h3>自定义内容</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
                 text="form open"
-                type={['primary']}
+                type={'primary'}
                 style={marginStyle}
                 onClick={() => {
                   Modal.formConfirm({ title: 'Form Open',
@@ -115,21 +206,24 @@ class ConfirmDoc extends Component {
               />
             </Col>
             <Col span={24}>
-              <Button
+              <h3>不同大小</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
                 text="small"
-                type={['primary']}
+                type={'primary'}
                 style={marginStyle}
                 onClick={() => { Modal.confirm({ title: 'warning', content: 'this is a warning', type: 'small', style: 'primary' }, () => { alert('this is sure callback'); }, () => { alert('this is cancle callback'); }); }}
               />
-              <Button
+              <Buttons
                 text="middle"
-                type={['primary']}
+                type={'primary'}
                 style={marginStyle}
                 onClick={() => { Modal.alert({ title: 'warning', content: 'this is a warning', type: 'middle', style: 'primary' }, () => { console.log('alert'); }); }}
               />
-              <Button
+              <Buttons
                 text="large"
-                type={['primary']}
+                type={'primary'}
                 style={marginStyle}
                 onClick={() => {
                   Modal.alert({ title: 'warning',
@@ -141,19 +235,21 @@ class ConfirmDoc extends Component {
                 }}
               />
             </Col>
-            <Col span={24}>Loading</Col>
             <Col span={24}>
-              <Button
+              <h3>Loading</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
                 text="Loader show"
-                type={['primary']}
+                type={'primary'}
                 style={marginStyle}
                 onClick={() => {
                   Loader.show();
                 }}
               />
-              <Button
+              <Buttons
                 text="Loader Hide"
-                type={['primary']}
+                type={'primary'}
                 style={marginStyle}
                 onClick={() => {
                   Loader.hide();
@@ -161,6 +257,7 @@ class ConfirmDoc extends Component {
               />
             </Col>
           </Row>
+        </section>
         );
     }
 }

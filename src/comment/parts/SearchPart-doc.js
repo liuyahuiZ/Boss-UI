@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss';
 import styles from '../common/style';
-import icons from '../common/icon';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -186,8 +185,15 @@ class SearchPartDoc extends Component {
         auth: 'edit',
       }];
         return(
+          <section className="doc">
           <Row>
           <Col span={24}>
+            <h2>SearchPart 搜索框列表组合</h2>
+          </Col>
+          <Col span={24}>
+            <h3>基础用法</h3>
+          </Col>
+          <Col span={24} style={styles.codeBox}>
             <SearchPart
               title="查询列表"
               url="http://www.baidu.com/"
@@ -201,7 +207,7 @@ class SearchPartDoc extends Component {
               operations={operations}
             />
           </Col>
-          <Col>
+          <Col style={styles.codeBox}>
             <SearchPart
               title="查询列表"
               url="http://www.baidu.com/"
@@ -218,6 +224,7 @@ class SearchPartDoc extends Component {
             />
           </Col>
         </Row>
+        </section>
         );
     }
 }

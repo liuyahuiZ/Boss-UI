@@ -11,6 +11,9 @@ class DatePicker extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
   }
+  setValue(_value) {
+    this.setState({ value: _value });
+  }
   getValue() {
     return this.state.value;
   }

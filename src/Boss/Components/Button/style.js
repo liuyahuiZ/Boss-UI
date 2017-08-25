@@ -37,12 +37,10 @@ export default {
     color: '#fff',
   },
   primaryHover: {
-    backgroundColor: '#5ba4fd',
-    color: '#fff'
+    backgroundColor: '#5ba4fd'
   },
   primaryActive: {
-    backgroundColor: '#2888fd',
-    color: '#fff'
+    backgroundColor: '#2888fd'
   },
   small: {
     fontSize: '14px',
@@ -91,5 +89,8 @@ export default {
     cursor: 'not-allowed',
     color: '#aaa',
     border: '0',
+  },
+  alldisabled: {
+    cursor: 'not-allowed'
   }
 };

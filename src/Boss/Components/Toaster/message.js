@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import styles from './style';
-import '../Style/comstyle.css';
+import '../Style/toaster.css';
 
 class Message extends Component {
   constructor(props) {

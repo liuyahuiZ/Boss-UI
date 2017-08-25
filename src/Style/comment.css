@@ -1,4 +1,6 @@
 body{margin:0;padding:0;}
 .doc{}
-.doc h3{font-size: 22px;color: rgba(0,0,0,.85);
+.doc h2{font-size: 25px;color: #333;font-weight: 400;
+    font-family: Lato,Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;}
+.doc h3{font-size: 22px;color: #666;font-weight: 400;
     font-family: Lato,Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;}

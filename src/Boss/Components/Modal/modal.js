@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import PropTypes from 'prop-types';
 import styles from './style';
 import Cell from './cell';
-import '../Style/comstyle.scss';
+import '../Style/comstyle.css';
 
 class Modal extends Component {
   constructor(props) {

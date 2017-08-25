@@ -21,10 +21,11 @@ export default {
   contoner: {
     height: '90vh',
     overflow: 'scroll',
-    padding: '2% 2% 0% 2%',
+    padding: '2% 2% 3% 2%',
     boxSizing: 'border-box'
   },
   codeBox: {
+    marginTop: '2%',
     padding: '2%',
     border: '1px solid #eee',
     borderRadius: '3px'

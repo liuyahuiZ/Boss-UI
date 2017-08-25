@@ -108,11 +108,11 @@ export default class SearchPart extends Component {
       let innerres = true;
 
       if (item.valid && !item.hasNoChild) {
-        const childValues = item.items.map(i => this.getDomData(i));
-        innerres = item.valid(...childValues);
-      }
-      if (!innerres) {
-        Toaster.toaster({ type: 'error', content: item.errorMsg });
+        innerres = this.checkItemValid(item);
+
+        if (!innerres && item.errorMsg) {
+          Toaster.toaster({ type: 'warning', content: item.errorMsg }, true);
+        }
       }
 
       return innerres;
@@ -200,7 +200,7 @@ export default class SearchPart extends Component {
             } else {
               this.search();
             }
-          } else {
+          } else if (this.checkValid()) {
             const data = this.getSearchData();
             button.func(data);
           }

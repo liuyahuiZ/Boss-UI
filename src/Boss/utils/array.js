@@ -73,19 +73,21 @@ export function merge(arr) {
   return Object.assign({}, ...arr);
 }
 
-export function mergeList(array, obj) {
+// @cutZero 数字零是否赋值
+export function mergeList(array, obj, cutZero = false) {
   if (!obj) {
     return;
   }
   forEach(array, (item) => {
     if (item.items) {
       forEach(item.items, (t) => {
-        if (obj[t.key]) {
+        if (obj[t.key] || (!cutZero && obj[t.key] === 0)) {
           t.value = obj[t.key];
         }
       });
-    } else if (obj[item.key]) {
+    } else if (obj[item.key] || (!cutZero && obj[item.key] === 0)) {
       item.value = obj[item.key];
     }
   });
 }
+

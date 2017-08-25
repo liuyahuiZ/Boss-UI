@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './style';
+import theme from '../Style/theme';
+import * as arrayUtils from '../../utils/array';
 
 class Textarea extends Component {
   constructor(props) {
@@ -8,9 +10,12 @@ class Textarea extends Component {
     const propValue = this.props.value;
     this.state = {
       value: this.props.value,
-      count: propValue.length
+      count: propValue.length,
+      focus: false
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   getValue() {
@@ -31,21 +36,32 @@ class Textarea extends Component {
     }
   }
 
+  handleFocus() {
+    this.setState({ focus: true });
+  }
+
+  handleBlur() {
+    this.setState({ focus: false });
+  }
+
   render() {
     const { placeholder, maxLength, maxLengthShow, style, disabled, typeStyle } = this.props;
-    const { count, value } = this.state;
+    const { count, value, focus } = this.state;
 
     let padWidth = 0;
     if (maxLengthShow) {
       padWidth = (maxLength.toFixed(0).length * 20) + 10;
     }
-    styles.containerStyle = Object.assign({}, styles.containerStyle, styles[typeStyle]);
-    styles.textarea = Object.assign({}, styles.textarea, styles[typeStyle]);
-    const containerStyle = Object.assign({}, styles.containerStyle, style);
-    const textareaStyle = Object.assign({}, styles.textarea, disabled && styles.disabled);
+    let containerStyle = Object.assign({}, styles.containerStyle, typeStyle ? styles[typeStyle] : '');
+    const textarea = Object.assign({}, styles.textarea, typeStyle ? styles[typeStyle] : '');
+    containerStyle = Object.assign({}, containerStyle, style);
+    let textareaStyle = Object.assign({}, textarea, disabled && styles.disabled);
     const padStyle = Object.assign({}, styles.padStyle, {
       width: padWidth
     });
+
+    textareaStyle = focus ? arrayUtils.merge([textareaStyle,
+      { outline: 0, boxShadow: `0 0 0 2px rgba(${theme.primaryRgb},.3)`, border: `1px solid rgb(${theme.primaryRgb})` }]) : textareaStyle;
     if (this.props.maxLengthShow) {
       return (
         <div style={containerStyle}>
@@ -55,6 +71,8 @@ class Textarea extends Component {
             onChange={this.handleChange}
             value={value}
             disabled={disabled}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
           />
           <span style={padStyle}>
             {count}/{maxLength}
@@ -84,7 +102,7 @@ Textarea.propTypes = {
   maxLengthShow: PropTypes.bool,
   style: PropTypes.shape({}),
   typeStyle: PropTypes.string,
-  onChange: () => {}
+  onChange: PropTypes.func,
 };
 
 Textarea.defaultProps = {
@@ -95,7 +113,7 @@ Textarea.defaultProps = {
   maxLength: 50,
   maxLengthShow: true,
   typeStyle: '',
-  onChange: () => {}
+  onChange: () => {},
 };
 
 export default Textarea;

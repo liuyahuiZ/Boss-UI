@@ -3,7 +3,8 @@ import { PropTypes } from 'prop-types';
 
 import isValid from '../../utils/validFuncs';
 import styles from './style';
-import '../Style/input.css';
+import theme from '../Style/theme';
+import * as arrayUtils from '../../utils/array';
 
 class Input extends Component {
   constructor(props) {
@@ -15,10 +16,13 @@ class Input extends Component {
     }
     this.state = {
       count: propValue.length,
-      value: propValue
+      value: propValue,
+      focus: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.getValue = this.getValue.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -40,13 +44,15 @@ class Input extends Component {
     this.setState({ value: _value });
   }
 
-  handleFocus(event) {
+  handleFocus() {
+    this.setState({ focus: true });
     if (!this.props.disabled) {
       this.props.onFocus(event);
     }
   }
 
-  handleBlur(event) {
+  handleBlur() {
+    this.setState({ focus: false });
     if (!this.props.disabled) {
       this.props.onBlur(event);
     }
@@ -85,20 +91,20 @@ class Input extends Component {
 
   render() {
     const { placeholder, maxLength, maxLengthShow, disabled, style, typeStyle } = this.props;
-    const { count, value } = this.state;
+    const { count, value, focus } = this.state;
     let padWidth = 0;
     if (maxLengthShow) {
       padWidth = (maxLength.toFixed(0).length * 20) + 10;
     }
-
     const containerStyle = Object.assign({}, styles.containerStyle, styles[typeStyle], style);
-    const inputStyle = Object.assign({}, styles.inputStyle, disabled && styles.disabled, {
+    let inputStyle = Object.assign({}, styles.inputStyle, disabled && styles.disabled, {
       padding: `0 ${padWidth + 10}px 0 10px`
     });
     const padStyle = Object.assign({}, styles.padStyle, {
       width: padWidth
     });
-
+    inputStyle = focus ? arrayUtils.merge([inputStyle,
+      { outline: 0, boxShadow: `0 0 0 2px rgba(${theme.primaryRgb},.3)`, border: `1px solid rgb(${theme.primaryRgb})` }]) : inputStyle;
     if (this.props.maxLengthShow) {
       return (
         <div style={containerStyle}>
@@ -108,6 +114,8 @@ class Input extends Component {
             style={inputStyle}
             value={value}
             disabled={disabled}
+            onFocus={this.handleFocus}
+            onBlur={this.handleBlur}
           />
           <span style={padStyle}>
             {count}/{maxLength}

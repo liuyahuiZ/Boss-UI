@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import * as arrayUtils from '../../utils/array';
 import styles from './style';
-import '../Style/comstyle.scss';
+import '../Style/comstyle.css';
 
 class Tab extends Component {
   constructor(props) {

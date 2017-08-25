@@ -147,7 +147,8 @@ class Tree extends Component {
     if (item.children) {
       return (
         <TreeNode
-          prekey={item.preKey} key={item.key} title={item.title} link={item.link} onCheck={this.onCheck}
+          prekey={item.preKey} key={item.key} title={item.title} link={item.link}
+          onCheck={this.onCheck}
           onDelAmb={this.onDelAmb} checkStatus={checkStatus} checkable={checkable}
           display={display} active={actived}
         >

@@ -17,6 +17,7 @@ const click = function (event) {
 };
 const {
     Button,
+    Buttons,
     Input,
     DatePicker,
     Textarea,
@@ -57,35 +58,43 @@ class ToasterDoc extends Component {
       
     render() {
         return(
-            <Row style={{minHeight: '500px'}}>
-            <Col span={24}>Toaster</Col>
+          <section className="doc">
+          <Row>
             <Col span={24}>
-              <Button
+              <h2>Toaster 消息提示框</h2>
+              <div>悬浮出现在页面上方，显示全局的通知提醒消息。</div>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
                 text="success"
-                type={['primary']}
+                type={"success"}
                 style={marginStyle}
                 onClick={() => { Toaster.toaster({ type: 'success', content: 'this is a success', time: 2000 }); }}
               />
-              <Button
+              <Buttons
                 text="error"
-                type={['primary']}
+                type={"error"}
                 style={marginStyle}
                 onClick={() => { Toaster.toaster({ type: 'error', content: 'this is a error' }); }}
               />
-              <Button
+              <Buttons
                 text="normal"
-                type={['primary']}
+                type={"normal"}
                 style={marginStyle}
                 onClick={() => { Toaster.toaster({ type: 'normal', content: 'this is a normal' }); }}
               />
-              <Button
+              <Buttons
                 text="warning"
-                type={['primary']}
+                type={"warning"}
                 style={marginStyle}
                 onClick={() => { Toaster.toaster({ type: 'warning', content: 'this is a warning' }); }}
               />
             </Col>
           </Row>
+          </section>
         );
     }
 }

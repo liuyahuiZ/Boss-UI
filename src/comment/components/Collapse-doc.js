@@ -57,8 +57,16 @@ class CollapseDoc extends Component {
       
     render() {
         return(
-          <Row gutter={16}>
-          <Col span={24} >
+          <section className="doc">
+          <Row>
+            <Col span={24}>
+              <h2>Collapse 折叠面板</h2>
+              <div>可同时展开多个面板，面板之间不影响</div>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
             <Collapse >
               <Panel title={'title1'}>
                 <Collapse >
@@ -76,6 +84,7 @@ class CollapseDoc extends Component {
             </Collapse>
           </Col>
         </Row>
+        </section>
         );
     }
 }

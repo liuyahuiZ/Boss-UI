@@ -16,6 +16,7 @@ const click = function (event) {
 };
 const {
     Button,
+    Buttons,
     Input,
     DatePicker,
     Textarea,
@@ -56,59 +57,154 @@ class Bottons extends Component {
       
     render() {
         return(
+          <section className="doc">
             <Row>
             <Col span={24}>
-              <Button
-                text="确定"
-                type={['primary']}
+                <h2>Button 按钮</h2>
+            </Col>
+            <Col span={24}>
+                <h3>基础用法</h3>
+                <div>基础的按钮用法</div>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+            <Buttons
+              text="主要按钮"
+              style={marginStyle}
+              type={'primary'}
+              size={'large'}
+            />
+            <Buttons
+              text="默认按钮"
+              style={marginStyle}
+              type={'primary'}
+              size={'large'}
+              plain
+            />
+            <Buttons
+              text="文字按钮"
+              style={marginStyle}
+              type={'link'}
+            />
+            </Col>
+            <Col span={24} >
+                <h3>禁用状态</h3>
+                <div>按钮不可用状态</div>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
+                text="主要按钮"
                 style={marginStyle}
-              />
-              <Button
-                text="确定"
-                onClick={click}
-                style={marginStyle}
-              />
-              <Button
-                text="确定"
-                style={marginStyle}
+                type={'primary'}
+                size={'large'}
                 disabled
               />
-              <Button
-                text="确定"
+              <Buttons
+                text="默认按钮"
                 style={marginStyle}
-                type={['primary', 'small']}
+                type={'primary'}
+                size={'large'}
+                plain
                 disabled
               />
-              <Button
-                text="确定"
+              <Buttons
+                text="文字按钮"
                 style={marginStyle}
-                type={['primary', 'large']}
-              />
-              <Button
-                text="确定"
-                style={marginStyle}
-                type={['primary', 'small']}
+                type={'link'}
+                disabled
               />
             </Col>
             <Col span={24}>
-              <Button
-                text="确定"
+                <h3>不同大小</h3>
+                <div>Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸</div>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
+                text="大型按钮"
                 style={marginStyle}
-                type={['link', 'large']}
+                type={'primary'}
+                size={'large'}
               />
-              <Button
-                text="确定"
+              <Buttons
+                text="正常按钮"
                 style={marginStyle}
-                type={['link', 'small']}
+                type={'primary'}
               />
-              <Button
-                text="确定"
+              <Buttons
+                text="小型按钮"
                 style={marginStyle}
-                type={['link', 'small']}
-                disabled
+                type={'primary'}
+                size={'small'}
+              />
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
+                text="大型按钮"
+                style={marginStyle}
+                type={'primary'}
+                size={'large'}
+                plain
+              />
+              <Buttons
+                text="正常按钮"
+                style={marginStyle}
+                type={'primary'}
+                plain
+              />
+              <Buttons
+                text="小型按钮"
+                style={marginStyle}
+                type={'link'}
+                size={'small'}
+                plain
+              />
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
+                text="大型按钮"
+                style={marginStyle}
+                type={'link'}
+                size={'large'}
+              />
+              <Buttons
+                text="正常按钮"
+                style={marginStyle}
+                type={'link'}
+              />
+              <Buttons
+                text="小型按钮"
+                style={marginStyle}
+                type={'link'}
+                size={'small'}
+              />
+            </Col>
+            <Col span={24}>
+                <h3>不同颜色</h3>
+                <div>Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸</div>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
+                text="成功"
+                style={marginStyle}
+                type={'success'}
+              />
+              <Buttons
+                text="警告"
+                style={marginStyle}
+                type={'warning'}
+              />
+              <Buttons
+                text="错误"
+                style={marginStyle}
+                type={'error'}
+              />
+              <Buttons
+                text="正常"
+                style={marginStyle}
+                type={'info'}
               />
             </Col>
           </Row>
+        </section>
         );
     }
 }

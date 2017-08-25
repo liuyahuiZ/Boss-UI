@@ -35,8 +35,23 @@ export function isLikeArray(obj) {
   return isNumber(len) && len >= 0 && len <= MAX_ARRAY_LENGTH;
 }
 
+
 export function noop() {}
 
 export function genRandomId() {
   return `${+new Date()}${(Math.random() * 1000000).toFixed(0)}`;
+}
+
+/*
+* 带默认值的预处理显示
+* @isCut 为真值时，数字零不放过
+* */
+export function defValFormater(val, def = '', isCut = false) {
+  if (val === undefined || val === null || val === '') {
+    return def;
+  }
+  if (isCut && val === 0) {
+    return def;
+  }
+  return val;
 }

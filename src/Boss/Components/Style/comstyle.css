@@ -1,3 +1,23 @@
+.modal-enter {
+  top: 0px;
+  opacity: 0;
+}
+.modal-enter.modal-enter-active {
+  top: 0px;
+  opacity: 1;
+}
+.modal-leave {
+  top: 0px;
+  opacity: 1;
+}
+.modal-leave.modal-leave-active {
+  top: 0px;
+  opacity: 0;
+}
+.transition, .transition div{
+  transition: all 200ms;
+}
+
 .carousel-enter {
   top: -20px;
   opacity: 0;
@@ -16,25 +36,7 @@
   opacity: 0;
   transition: all 300ms;
 }
-.megStyle{
-    display: block;
-    box-sizing: border-box;
-    position: relative;
-    margin-bottom: 10px ;
-    left:50%;
-    text-align:left;
-    word-wrap: break-word;
-    word-break: break-all;
-    resize: none;
-    min-width: 200px;
-    max-width: 30rem;
-    height: auto;
-    font-size: 16px;
-    padding: .5rem 1rem;
-    background-color: rgb(235,248,242);
-    transform: translateX(-50%);
-    border: solid 1px;
-    border-color: rgb(167,225,196);
-    border-radius: 5px;
-    color: rgba(0,0,0,0.65)
-  }
+
+.trans{
+  transition: all 300ms;
+}

@@ -60,10 +60,26 @@ class TabDoc extends Component {
       { tabName: 'second', content: (<div>23<Button text="确定" type={['primary']} style={marginStyle} /></div>), isActive: false },
       { tabName: 'thired', content: 3, isActive: false }];
         return(
-          <Row >
+          <section className="doc">
+          <Row>
+            <Col span={24}>
+              <h2>Tab 标签</h2>
+              <div>分隔内容上有关联但属于不同类别的数据集合</div>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
             <Tab options={tabOptions} />
+            </Col>
+            <Col span={24}>
+              <h3>切换按钮左侧</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
             <Tab options={tabOptions} modal={'MENULEFT'} />
-        </Row>
+            </Col>
+          </Row>
+          </section>
         );
     }
 }

@@ -23,6 +23,8 @@ import SwitchDoc from './components/Switch-doc'
 import SearchPartDoc from './parts/SearchPart-doc'
 import DrawPartDoc from './parts/DrawPart-doc'
 import TransferPartDoc from './parts/TransferPart-doc'
+import Info from './info'
+import Logs from './logs'
 
 class MyRouter extends Component{
   constructor(props) {
@@ -33,6 +35,12 @@ class MyRouter extends Component{
     <Router history={hashHistory}>
       <Route path={'/'} component={App} />
       <Route path={'index'} component={Index} />
+      <Route path={'info'} component={AllComponent} >
+        <Route path={'index'} component={Info} />
+      </Route>
+      <Route path={'logs'} component={AllComponent} >
+        <Route path={'index'} component={Logs} />
+      </Route>
       <Route path={'component'} component={AllComponent} >
         <Route path={'Button'} component={Bottons} />
         <Route path={'Grid'} component={GridDoc} />

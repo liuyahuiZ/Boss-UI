@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import * as arrayUtils from '../../utils/array';
 import filter from '../../utils/filter';
+import { defValFormater } from '../../utils/base';
 
 import styles from './style';
 
@@ -21,7 +22,7 @@ class LabelPart extends Component {
       }
       return (<span style={style}> {filter(detail.format, detail.value) || '——'} </span>);
     }
-    return (<span style={style}> {detail.value || '——'} </span>);
+    return (<span style={style}> {defValFormater(detail.value, '——')} </span>);
   }
   render() {
     const { detailList, data } = this.props;

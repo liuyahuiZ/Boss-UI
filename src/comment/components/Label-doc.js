@@ -63,11 +63,19 @@ class LabelDoc extends Component {
       { text: '123', icon: 'ios-alarm-outline', type: 'normal' },
       { text: '123', icon: 'android-settings', type: 'error' }];
         return(
-          <Row justiy={'flex-start'} align={'flex-start'}>
-          <Col span={24}>
+          <section className="doc">
+          <Row>
+            <Col span={24}>
+              <h2>Label 标签</h2>
+            </Col>
+            <Col span={24}>
+              <h3>基础用法</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
             <LabelGroup options={labelMap} />
           </Col>
-        </Row>
+          </Row>
+          </section>
         );
     }
 }
