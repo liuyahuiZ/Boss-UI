@@ -6,16 +6,16 @@ module.exports = {
   entry: {main: './src/index.js'},
   output: {
     filename: 'app.build.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-    // chunkFilename: '[name].chunk.js'
+    path: path.resolve(__dirname, 'dist/boss-ui/'),
+    publicPath: 'boss-ui/',
+    chunkFilename: '[name].chunk.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   names: ['vendor'],
-    //   filename: 'vendor.js'
-    // })
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['vendor'],
+      filename: 'vendor.js'
+    })
   ],
   module: {
     rules: [{
@@ -56,10 +56,5 @@ module.exports = {
         name: 'fonts/[name].[hash:7].[ext]'
       }
     }]
-  },
-  resolve: {
-    alias: {
-      boss: path.resolve(__dirname, './src/boss.js')
-    }
   }
 };

@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "babel-plugin-import": "^1.2.1",
-    "boss-react-ui": "^1.0.5",
+    "boss-react-ui": "^1.0.6",
     "extract-text-webpack-plugin": "^3.0.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.3",
