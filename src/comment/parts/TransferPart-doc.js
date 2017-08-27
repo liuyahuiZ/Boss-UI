@@ -3,7 +3,8 @@ import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
 import icons from '../common/icon';
-import '../../Style/comment.css'
+import '../../Style/comment.css';
+import Code from '../common/Code';
 
 const dom = {};
 const marginStyle = {
@@ -77,7 +78,22 @@ class TransferPartDoc extends Component {
               <h3>基础用法</h3>
             </Col>
             <Col span={16} style={styles.codeBox}>
-            <TransferPart {...transferOptions} /></Col>
+            <TransferPart {...transferOptions} />
+            </Col>
+            <Code codes={`import { Parts } from 'boss-react-ui';
+const { TransferPart } = Parts;
+const transferOptions = {
+  list: [
+    { name: 'item1', value: '1,2,3,4,5,6,7' },
+    { name: 'item1', value: '2,1,3,4,5,6,7' },
+    { name: 'item1', value: '3,2,1,4,5,6,7' },
+    { name: 'item1', value: '4,3,2,1,5,6,7' },
+    { name: 'item1', value: '5,4,3,2,1,6,7' },
+    { name: 'item1', value: '6,5,4,3,2,1,7' },
+    { name: 'item1', value: '7,6,5,4,3,2,1' }
+  ]
+};
+<TransferPart {...transferOptions} />`} />
           </Row>
           </section>
         );

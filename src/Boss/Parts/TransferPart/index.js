@@ -5,7 +5,7 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import Icon from '../../Components/Icon';
-import './style.scss';
+import '../../Components/Style/transfer.scss';
 
 const propTypes = {
   list: PropTypes.arrayOf(PropTypes.shape({})),

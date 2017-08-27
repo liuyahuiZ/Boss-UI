@@ -20,7 +20,7 @@
 npm install boss-react-ui -s
 ```
 
-##快速上手
+## 快速上手
 
 ```javascript
 import ReactDOM from 'react-dom';

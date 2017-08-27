@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -93,6 +93,32 @@ class ToasterDoc extends Component {
                 onClick={() => { Toaster.toaster({ type: 'warning', content: 'this is a warning' }); }}
               />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Buttons, Toaster } = Components;
+<Buttons
+  text="success"
+  type={"success"}
+  style={marginStyle}
+  onClick={() => { Toaster.toaster({ type: 'success', content: 'this is a success', time: 2000 }); }}
+/>
+<Buttons
+  text="error"
+  type={"error"}
+  style={marginStyle}
+  onClick={() => { Toaster.toaster({ type: 'error', content: 'this is a error' }); }}
+/>
+<Buttons
+  text="normal"
+  type={"normal"}
+  style={marginStyle}
+  onClick={() => { Toaster.toaster({ type: 'normal', content: 'this is a normal' }); }}
+/>
+<Buttons
+  text="warning"
+  type={"warning"}
+  style={marginStyle}
+  onClick={() => { Toaster.toaster({ type: 'warning', content: 'this is a warning' }); }}
+/>`} />
           </Row>
           </section>
         );

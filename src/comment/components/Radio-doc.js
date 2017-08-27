@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -73,6 +73,12 @@ class RadioDoc extends Component {
                 onChange={click}
             />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Radio } = Components;
+<Radio
+  options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2', checked: true }]}
+  onChange={click}
+/>`} />
             <Col span={24}>
               <h2>Checkbox 多选框</h2>
               <div>一组备选项中进行多选</div>
@@ -87,6 +93,13 @@ class RadioDoc extends Component {
                 onChange={click}
               />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Checkbox } = Components;
+<Checkbox
+  ref={(checkbox) => { dom.checkbox = checkbox; }}
+  options={checkboxOptions}
+  onChange={click}
+/>`} />
           </Row>
           </section>
         );

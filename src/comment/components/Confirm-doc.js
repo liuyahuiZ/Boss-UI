@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -147,6 +147,20 @@ class ConfirmDoc extends Component {
                 onClick={() => { Modal.alert({ title: 'warning', content: 'this is a warning', type: 'middle' }, () => { console.log('alert'); }); }}
               />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Buttons, Modal } = Components;
+<Buttons
+  text="confirm"
+  type={'primary'}
+  style={marginStyle}
+  onClick={() => { Modal.confirm({ title: 'warning', content: 'this is a warning', type: 'small' }, () => { alert('this is sure callback'); }, () => { alert('this is cancle callback'); }); }}
+/>
+<Buttons
+  text="alert"
+  type={'primary'}
+  style={marginStyle}
+  onClick={() => { Modal.alert({ title: 'warning', content: 'this is a warning', type: 'middle' }, () => { console.log('alert'); }); }}
+/>`} />
             <Col span={24}>
               <h3>多层弹出</h3>
             </Col>
@@ -172,6 +186,26 @@ class ConfirmDoc extends Component {
                 }}
               />
             </Col>
+            <Code codes={`<Buttons
+  text="mult open"
+  type={'primary'}
+  style={marginStyle}
+  plain
+  onClick={() => {
+    Modal.alert({ title: 'warning',
+      content: (<div> others
+        <Buttons
+          text="click to do a new Alert "
+          type={'link'}
+          style={marginStyle} onClick={() => { Modal.confirm({ title: 'warning', content: 'this is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warning' }, () => { console.log('this is callback'); }, () => { console.log('this is cancle callback'); }); }}
+        />
+      </div>),
+      type: 'large',
+      style: 'primary',
+    },
+      () => { console.log('nult callback'); });
+  }}
+/>`} />
             <Col span={24}>
               <h3>自定义内容</h3>
             </Col>
@@ -205,6 +239,34 @@ class ConfirmDoc extends Component {
                 }}
               />
             </Col>
+            <Code codes={`<Buttons
+text="form open"
+type={'primary'}
+style={marginStyle}
+onClick={() => {
+  Modal.formConfirm({ title: 'Form Open',
+    content: (
+      <EditPart
+        editItemList={editItemList}
+        ref={(ref) => {
+          self.editPart = ref;
+        }}
+      />
+    ),
+    style: 'primary',
+    btnConStyle: 'center',
+    btnSure: {
+      text: '复审通过',
+      type: ['primary']
+    },
+    btnCancle: {
+      text: '复审不通过',
+    }
+  },
+  (id, callback) => { save(id, callback); },
+  (id, callback) => { callback(id); console.log('this is cancle callback'); });
+}}
+/>`} />
             <Col span={24}>
               <h3>不同大小</h3>
             </Col>
@@ -235,6 +297,31 @@ class ConfirmDoc extends Component {
                 }}
               />
             </Col>
+            <Code codes={`<Buttons
+  text="small"
+  type={'primary'}
+  style={marginStyle}
+  onClick={() => { Modal.confirm({ title: 'warning', content: 'this is a warning', type: 'small', style: 'primary' }, () => { alert('this is sure callback'); }, () => { alert('this is cancle callback'); }); }}
+/>
+<Buttons
+  text="middle"
+  type={'primary'}
+  style={marginStyle}
+  onClick={() => { Modal.alert({ title: 'warning', content: 'this is a warning', type: 'middle', style: 'primary' }, () => { console.log('alert'); }); }}
+/>
+<Buttons
+  text="large"
+  type={'primary'}
+  style={marginStyle}
+  onClick={() => {
+    Modal.alert({ title: 'warning',
+      content: (<div><a onClick={() => { Modal.confirm({ title: 'warning', content: 'this is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warningthis is a warning' }, () => { console.log('this is callback'); }, () => { console.log('this is cancle callback'); }); }} >click to do a new Alert</a></div>),
+      type: 'large',
+      style: 'primary'
+    },
+      () => { console.log('nult callback'); });
+  }}
+/>`} />
             <Col span={24}>
               <h3>Loading</h3>
             </Col>
@@ -256,6 +343,24 @@ class ConfirmDoc extends Component {
                 }}
               />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Buttons, Loader } = Components;
+<Buttons
+  text="Loader show"
+  type={'primary'}
+  style={marginStyle}
+  onClick={() => {
+    Loader.show();
+  }}
+/>
+<Buttons
+  text="Loader Hide"
+  type={'primary'}
+  style={marginStyle}
+  onClick={() => {
+    Loader.hide();
+  }}
+/>`} />
           </Row>
         </section>
         );

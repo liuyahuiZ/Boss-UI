@@ -63,10 +63,7 @@ class Logs extends Component {
                 <h2>更新日志</h2>
             </Col>
             <Col span={24}>
-                <h3>基础用法</h3>
-                <div>基础的按钮用法</div>
-            </Col>
-            <Col span={24} style={styles.codeBox}>
+                <div>当前最新版本1.0.6</div>
             </Col>
           </Row>
         </section>

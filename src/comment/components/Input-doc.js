@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -84,6 +84,25 @@ class InputDoc extends Component {
               maxLength={100}
               />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Input } = Components;
+<Input
+ref={(input) => { dom.input = input; }}
+placeholder="我是placeholder"
+style={marginStyle}
+maxLength={10}
+/>
+<Input
+  value="我是value"
+  style={marginStyle}
+  maxLength={100}
+/>
+<Input
+  placeholder="请输入"
+  style={marginStyle}
+  typeStyle="half"
+  maxLength={100}
+/>`} />
             <Col span={24}>
               <h3>禁用状态</h3>
             </Col>
@@ -96,6 +115,13 @@ class InputDoc extends Component {
               disabled
               />
             </Col>
+            <Code codes={`<Input
+  placeholder="我是placeholder"
+  style={marginStyle}
+  maxLength={10}
+  maxLengthShow={false}
+  disabled
+/>`} />
             <Col span={24}>
               <h2>Textarea 文本框</h2>
             </Col>
@@ -119,6 +145,23 @@ class InputDoc extends Component {
               typeStyle="half"
               />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Textarea } = Components;
+<Textarea
+  placeholder="我是placeholder"
+  style={marginStyle}
+/>
+<Textarea
+  value="我是value"
+  style={marginStyle}
+  maxLength={100}
+/>
+<Textarea
+  value="我是value"
+  style={marginStyle}
+  maxLength={100}
+  typeStyle="half"
+/>`} />
             <Col span={24}>
               <h3>禁用状态</h3>
             </Col>
@@ -130,12 +173,19 @@ class InputDoc extends Component {
               disabled
               />
             </Col>
+            <Code codes={`<Textarea
+  value="我是文本"
+  style={marginStyle}
+  maxLengthShow={false}
+  disabled
+/>`} />
             <Col span={24}>
               <h3>富文本框</h3>
             </Col>
             <Col style={styles.codeBox}>
               <RichEditor />
             </Col>
+            <Code codes={`<RichEditor />`} />
           </Row>
         </section>
         );

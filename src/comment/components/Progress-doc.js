@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -71,6 +71,11 @@ class ProgressDoc extends Component {
               <Progress percent={57} barColor={'#76BFDC'} radius={10} />
               <Progress percent={99} barColor={'#FF6157'} radius={10} />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Progress } = Components;
+<Progress percent={30} barColor={'#F96C43'} radius={10} />
+<Progress percent={57} barColor={'#76BFDC'} radius={10} />
+<Progress percent={99} barColor={'#FF6157'} radius={10} />`} />
             <Col span={24}>
               <h3>长度根据外层容器长度变化</h3>
             </Col>
@@ -78,6 +83,10 @@ class ProgressDoc extends Component {
               <Progress percent={40} barColor={'#79D46D'} radius={10} />
               <Progress percent={80} />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Progress } = Components;
+<Progress percent={40} barColor={'#79D46D'} radius={10} />
+<Progress percent={80} />`} />
           </Row>
           </section>
         );

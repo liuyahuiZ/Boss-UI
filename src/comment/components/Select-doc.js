@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -93,6 +93,26 @@ class SelectDoc extends Component {
               </Col>
             </Row>
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Select, Selects } = Components;
+<Select
+  style={marginStyle}
+  options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2' }]}
+/>
+<Selects
+  style={marginStyle}
+  options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2123123123123123123123123123123' },
+  { value: 3, text: 'haha' }, { value: 4, text: 'haha2' },
+  { value: 6, text: 'haha' }, { value: 5, text: 'haha2' },
+  { value: 7, text: 'haha' }, { value: 8, text: 'haha2' },
+  { value: 9, text: 'haha' }, { value: 10, text: 'haha2' }]}
+/>
+<Selects
+  style={{ width: '200px', margin: '10px' }}
+  options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2' },
+  { value: 3, text: 'haha3' }, { value: 4, text: 'haha4' }]}
+/>
+`} />
             <Col span={24}>
               <h3>带有过滤功能的搜索框</h3>
             </Col>
@@ -107,6 +127,15 @@ class SelectDoc extends Component {
                 filter
               />
             </Col>
+            <Code codes={`<Selects
+  style={marginStyle}
+  options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2123123123123123123123123123123' },
+  { value: 3, text: 'haha' }, { value: 4, text: 'haha2' },
+  { value: 6, text: 'haha' }, { value: 5, text: 'haha2' },
+  { value: 7, text: 'haha' }, { value: 8, text: 'haha2' },
+  { value: 9, text: 'haha' }, { value: 10, text: 'haha2' }]}
+  filter
+/>`} />
             <Col span={24}>
               <h3>禁用状态</h3>
             </Col>
@@ -129,6 +158,17 @@ class SelectDoc extends Component {
               </Col>
             </Row>
             </Col>
+            <Code codes={`<Select
+  style={marginStyle}
+  options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2' }]}
+  disabled
+/>
+<Selects
+  style={{ width: '300px', margin: '10px' }}
+  options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2' },
+  { value: 3, text: 'haha3' }, { value: 4, text: 'haha4' }]}
+  disabled
+/>`} />
           </Row>
           </section>
         );

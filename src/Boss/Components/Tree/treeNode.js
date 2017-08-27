@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 import * as arrayUtils from '../../utils/array';
 import Icon from '../Icon';
 import styles from './style';

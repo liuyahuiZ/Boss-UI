@@ -80,8 +80,11 @@ class Selects extends Component {
     const containerStyle = Object.assign({}, styles.container, style);
     const disabledStyle = disabled ? styles.disabled : '';
     const optionStyle = this.state.focus ? styles.show : styles.hide;
-    const selectActive = this.state.focus ? arrayUtils.merge([styles.active,  { outline: 0, boxShadow: `0 0 0 2px rgba(${theme.primaryRgb},.3)`, border: `1px solid rgb(${theme.primaryRgb})` }]) : '';
-    // const selectActive = this.state.focus ? { outline: 0, boxShadow: `0 0 0 2px rgba(${theme.primaryRgb},.3)`, border: `1px solid rgb(${theme.primaryRgb})` } : '';
+    const selectActive = this.state.focus ? arrayUtils.merge([styles.active,
+      { outline: 0, boxShadow: `0 0 0 2px rgba(${theme.primaryRgb},.3)`, border: `1px solid rgb(${theme.primaryRgb})` }]) : '';
+    // const selectActive = this.state.focus ?
+    //  { outline: 0, boxShadow: `0 0 0 2px rgba(${theme.primaryRgb},.3)`,
+    // border: `1px solid rgb(${theme.primaryRgb})` } : '';
     const filtInput = filter ?
     (<div style={arrayUtils.merge([styles.filter, optionStyle])}>
       <Icon iconName={'ios-search-strong'} size={'80%'} />

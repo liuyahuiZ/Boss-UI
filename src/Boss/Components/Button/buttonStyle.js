@@ -5,7 +5,7 @@ export default {
 
     textDecoration: 'none',
     margin: 0,
-    padding: 0,
+    padding: '0 3px',
     outline: 'none',
     position: 'relative',
     zIndex: 1,
@@ -13,7 +13,7 @@ export default {
     fontSize: '16px',
     height: '32px',
     minWidth: '140px',
-    borderRadius: '4px',
+    borderRadius: '3px',
     backgroundColor: '#fff',
     color: '#333',
     border: '1px solid #aaa',

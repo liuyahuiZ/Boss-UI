@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -68,6 +68,9 @@ class DatepickerDoc extends Component {
           <Col span={24} style={styles.codeBox}>
             <FileUp />
           </Col>
+          <Code codes={`import { Components } from 'boss-react-ui';
+const { FileUp } = Components;
+<FileUp />`} />
           </Row>
           </section>
         );

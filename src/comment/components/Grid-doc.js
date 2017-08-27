@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css';
 import Highlight from 'react-highlight';
 
@@ -75,27 +75,13 @@ class GridDoc extends Component {
                     <Col flex={1} style={styles.textCenter}><div style={styles.items}>flex-1</div></Col>
                 </Row>
             </Col>
-            <Col span={24} >
-            <Collapse >
-                <Panel title={'查看代码'}>
-                <Row>
-                    <Col span={14}>
-                        <Highlight >
-                        {`<Row justify={'center'} align={'center'} style={styles.heights}>
+            <Code codes={`<Row justify={'center'} align={'center'} style={styles.heights}>
     <Col flex={1} style={styles.textCenter}>
     <div style={styles.items}>flex-1</div>
     </Col>
     <Col flex={2} style={styles.textCenter}><div style={styles.items1}>flex-2</div></Col>
     <Col flex={1} style={styles.textCenter}><div style={styles.items}>flex-1</div></Col>
-</Row>`}
-                        </Highlight>
-                    </Col>
-                    <Col span={10}>
-                    </Col>
-                </Row>
-              </Panel>
-              </Collapse >
-            </Col>
+</Row>`} />     
             <Col span={24}>
                 <h3>常用模式</h3>
                 <div>栅格化布局</div>
@@ -121,13 +107,7 @@ class GridDoc extends Component {
                 <Col span={6} style={styles.textCenter}><div style={styles.items1}>col-6</div></Col>
             </Row>
             </Col>
-            <Col span={24} >
-            <Collapse >
-                <Panel title={'查看代码'}>
-                <Row>
-                    <Col span={14}>
-                        <Highlight >
-                        {`<Row justify={'flex-start'} align={'center'} style={styles.heights}>
+            <Code codes={`<Row justify={'flex-start'} align={'center'} style={styles.heights}>
     <Col span={1} style={styles.textCenter}><div style={styles.items}>col-1</div></Col>
     <Col span={2} style={styles.textCenter}><div style={styles.items1}>col-2</div></Col>
     <Col span={2} style={styles.textCenter}><div style={styles.items}>col-2</div></Col>
@@ -145,15 +125,7 @@ class GridDoc extends Component {
     <Col span={6} style={styles.textCenter}><div style={styles.items1}>col-6</div></Col>
     <Col span={6} style={styles.textCenter}><div style={styles.items}>col-6</div></Col>
     <Col span={6} style={styles.textCenter}><div style={styles.items1}>col-6</div></Col>
-</Row>`}
-                        </Highlight>
-                    </Col>
-                    <Col span={10}>
-                    </Col>
-                </Row>
-              </Panel>
-              </Collapse >
-            </Col>
+</Row>`} />
             <Col span={24}>
                 <h3>内嵌模式</h3>
                 <div>栅格化布局</div>
@@ -172,13 +144,7 @@ class GridDoc extends Component {
                 <Col span={6} style={styles.textCenter}><div style={styles.items1}>col-6</div></Col>
                 </Row>
             </Col>
-            <Col span={24} >
-            <Collapse >
-                <Panel title={'查看代码'}>
-                <Row>
-                    <Col span={14}>
-                        <Highlight >
-                        {`<Row justify={'flex-start'} align={'center'} style={styles.heights}>
+            <Code codes={`<Row justify={'flex-start'} align={'center'} style={styles.heights}>
 <Col span={6} style={styles.textCenter}>
     <Row justify={'flex-start'} align={'center'} style={styles.heights}>
     <Col span={6} style={styles.textCenter}><div style={styles.items1}>内嵌col-6</div></Col>
@@ -189,16 +155,7 @@ class GridDoc extends Component {
 <Col span={6} style={styles.textCenter}><div style={styles.items1}>col-6</div></Col>
 <Col span={6} style={styles.textCenter}><div style={styles.items}>col-6</div></Col>
 <Col span={6} style={styles.textCenter}><div style={styles.items1}>col-6</div></Col>
-</Row>`}
-                        </Highlight>
-                    </Col>
-                    <Col span={10}>
-                    </Col>
-                </Row>
-              </Panel>
-              </Collapse >
-              </Col>
-
+</Row>`} />
         </Row>
         </section>
         );

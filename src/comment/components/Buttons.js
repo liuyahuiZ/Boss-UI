@@ -2,8 +2,9 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
-import '../../Style/comment.css'
+import Code from '../common/Code';
+import '../../Style/comment.css';
+import Highlight from 'react-highlight';
 
 const marginStyle = {
   margin: '10px'
@@ -86,6 +87,30 @@ class Bottons extends Component {
               type={'link'}
             />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Buttons } = Components;
+const marginStyle = {
+  margin: '10px'
+};
+<Buttons
+  text="主要按钮"
+  style={marginStyle}
+  type={'primary'}
+  size={'large'}
+/>
+<Buttons
+  text="默认按钮"
+  style={marginStyle}
+  type={'primary'}
+  size={'large'}
+  plain
+/>
+<Buttons
+  text="文字按钮"
+  style={marginStyle}
+  type={'link'}
+/>`} description={`type是控制按钮的主题样式，
+size是按钮的大小，plain是按钮背景色为空`} />
             <Col span={24} >
                 <h3>禁用状态</h3>
                 <div>按钮不可用状态</div>
@@ -113,6 +138,27 @@ class Bottons extends Component {
                 disabled
               />
             </Col>
+            <Code codes={`<Buttons
+  text="主要按钮"
+  style={marginStyle}
+  type={'primary'}
+  size={'large'}
+  disabled
+/>
+<Buttons
+  text="默认按钮"
+  style={marginStyle}
+  type={'primary'}
+  size={'large'}
+  plain
+  disabled
+/>
+<Buttons
+  text="文字按钮"
+  style={marginStyle}
+  type={'link'}
+  disabled
+/>`} />
             <Col span={24}>
                 <h3>不同大小</h3>
                 <div>Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸</div>
@@ -136,6 +182,23 @@ class Bottons extends Component {
                 size={'small'}
               />
             </Col>
+            <Code codes={`<Buttons
+  text="大型按钮"
+  style={marginStyle}
+  type={'primary'}
+  size={'large'}
+/>
+<Buttons
+  text="正常按钮"
+  style={marginStyle}
+  type={'primary'}
+/>
+<Buttons
+  text="小型按钮"
+  style={marginStyle}
+  type={'primary'}
+  size={'small'}
+/>`} />             
             <Col span={24} style={styles.codeBox}>
               <Buttons
                 text="大型按钮"
@@ -158,6 +221,26 @@ class Bottons extends Component {
                 plain
               />
             </Col>
+            <Code codes={`<Buttons
+  text="大型按钮"
+  style={marginStyle}
+  type={'primary'}
+  size={'large'}
+  plain
+/>
+<Buttons
+  text="正常按钮"
+  style={marginStyle}
+  type={'primary'}
+  plain
+/>
+<Buttons
+  text="小型按钮"
+  style={marginStyle}
+  type={'link'}
+  size={'small'}
+  plain
+/>`} />
             <Col span={24} style={styles.codeBox}>
               <Buttons
                 text="大型按钮"
@@ -177,6 +260,23 @@ class Bottons extends Component {
                 size={'small'}
               />
             </Col>
+            <Code codes={`<Buttons
+  text="大型按钮"
+  style={marginStyle}
+  type={'link'}
+  size={'large'}
+/>
+<Buttons
+  text="正常按钮"
+  style={marginStyle}
+  type={'link'}
+/>
+<Buttons
+  text="小型按钮"
+  style={marginStyle}
+  type={'link'}
+  size={'small'}
+/>`} />
             <Col span={24}>
                 <h3>不同颜色</h3>
                 <div>Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸</div>
@@ -203,6 +303,26 @@ class Bottons extends Component {
                 type={'info'}
               />
             </Col>
+            <Code codes={`<Buttons
+  text="成功"
+  style={marginStyle}
+  type={'success'}
+/>
+<Buttons
+  text="警告"
+  style={marginStyle}
+  type={'warning'}
+/>
+<Buttons
+  text="错误"
+  style={marginStyle}
+  type={'error'}
+/>
+<Buttons
+  text="正常"
+  style={marginStyle}
+  type={'info'}
+/>`} />
           </Row>
         </section>
         );

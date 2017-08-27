@@ -15,20 +15,25 @@ export default {
     marginTop: '2px',
     paddingLeft: '2%',
     height: '90vh',
-    overflowY: 'scroll',
     borderRight: '1px solid #eee'
   },
   contoner: {
     height: '90vh',
-    overflow: 'scroll',
     padding: '2% 2% 3% 2%',
     boxSizing: 'border-box'
+  },
+  overflow: {
+    overflowY: 'scroll',
   },
   codeBox: {
     marginTop: '2%',
     padding: '2%',
     border: '1px solid #eee',
     borderRadius: '3px'
+  },
+  showCode: {
+    marginTop: '-3px',
+    marginBottom: '3%'
   },
   heights: {
     minHeight: '100px'

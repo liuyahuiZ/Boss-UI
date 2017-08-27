@@ -4,12 +4,15 @@ Arduino® Light Theme - Stefania Mellai <s.mellai@arduino.cc>
 
 */
 
+pre{
+  margin: 0;
+}
 .hljs {
     display: block;
     overflow-x: auto;
     padding: 1em;
     background: #fff;
-    border: 1px solid #eee
+    border-right: 1px solid #eee
   }
   
   .hljs,

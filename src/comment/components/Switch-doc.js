@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -91,6 +91,15 @@ class SwitchDoc extends Component {
                 </Col>
                 </Row>
               </Col>
+              <Code codes={`import { Components } from 'boss-react-ui';
+const { Switch } = Components;
+<Switch />
+<Switch checkedText={0} unCheckText={1} checked />
+<Switch checkedText={'-'} unCheckText={'o'} onchange={switchChange} />
+<Switch checkedText={0} unCheckText={1} bgColor={'#4BD963'} checked />
+<Switch checkedText={0} unCheckText={1} bgColor={'#FF6157'} checked />
+<Switch checkedText={0} unCheckText={1} bgColor={'#FFD479'} checked />
+`} />
           </Row>
         </section>
         );

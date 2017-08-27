@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -99,6 +99,39 @@ class TreeDoc extends Component {
                     Date={gData}
                 />
               </Col>
+              <Code codes={`import { Components } from 'boss-react-ui';
+const { Tree } = Components;
+const x = 3;
+const y = 2;
+const z = 2; // 层级
+const gData = [];
+
+const generateData = (_level, _preKey, _tns) => {
+  const preKey = _preKey || '0';
+  const tns = _tns || gData;
+
+  const children = [];
+  for (let i = 0; i < x; i++) {
+    const key = $preKey-$i;
+    tns.push({ title: key, key, preKey });
+    if (i < y) {
+      children.push(key);
+    }
+  }
+  if (_level < 0) {
+    return tns;
+  }
+  const level = _level - 1;
+  children.forEach((key, index) => {
+    tns[index].children = [];
+    return generateData(level, key, tns[index].children);
+  });
+  return tns;
+};
+generateData(z);
+<Tree
+  Date={gData}
+/>`} />
               <Col span={24}>
                 <h3>带有选择框的树</h3>
               </Col>
@@ -109,6 +142,13 @@ class TreeDoc extends Component {
                     checkable
                 />
               </Col>
+              <Code codes={`import { Components } from 'boss-react-ui';
+const { Tree } = Components;
+<Tree
+  Date={gData}
+  display={'show'}
+  checkable
+/>`} />
             </Row>
             </section>
         );

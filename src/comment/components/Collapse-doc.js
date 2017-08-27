@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -67,22 +67,39 @@ class CollapseDoc extends Component {
               <h3>基础用法</h3>
             </Col>
             <Col span={24} style={styles.codeBox}>
-            <Collapse >
-              <Panel title={'title1'}>
-                <Collapse >
-                  <Panel title={'title1'}>
-                    <p>123</p>
-                  </Panel>
-                </Collapse>
-              </Panel>
-              <Panel title={'title2'}>
-                <p>123</p>
-              </Panel>
-              <Panel title={'title3'}>
-                <p>123</p>
-              </Panel>
-            </Collapse>
-          </Col>
+              <Collapse >
+                <Panel title={'title1'}>
+                  <Collapse >
+                    <Panel title={'title1'}>
+                      <p>123</p>
+                    </Panel>
+                  </Collapse>
+                </Panel>
+                <Panel title={'title2'}>
+                  <p>123</p>
+                </Panel>
+                <Panel title={'title3'}>
+                  <p>123</p>
+                </Panel>
+              </Collapse>
+            </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Collapse, Panel } = Components;
+<Collapse >
+  <Panel title={'title1'}>
+    <Collapse >
+      <Panel title={'title1'}>
+        <p>123</p>
+      </Panel>
+    </Collapse>
+  </Panel>
+  <Panel title={'title2'}>
+    <p>123</p>
+  </Panel>
+  <Panel title={'title3'}>
+    <p>123</p>
+  </Panel>
+</Collapse>`} />
         </Row>
         </section>
         );

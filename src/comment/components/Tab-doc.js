@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React , { Component }from 'react';
 import {Components, Parts, utils} from 'boss-react-ui';
 import styles from '../common/style';
-import icons from '../common/icon';
+import Code from '../common/Code';
 import '../../Style/comment.css'
 
 const dom = {};
@@ -72,12 +72,24 @@ class TabDoc extends Component {
             <Col span={24} style={styles.codeBox}>
             <Tab options={tabOptions} />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Tab } = Components;
+const tabOptions = [{ tabName: 'first', content: 123, isActive: true },
+  { tabName: 'second', content: (<div>23<Button text="确定" type={['primary']} style={marginStyle} /></div>), isActive: false },
+  { tabName: 'thired', content: 3, isActive: false }];
+<Tab options={tabOptions} />`} />
             <Col span={24}>
               <h3>切换按钮左侧</h3>
             </Col>
             <Col span={24} style={styles.codeBox}>
             <Tab options={tabOptions} modal={'MENULEFT'} />
             </Col>
+            <Code codes={`import { Components } from 'boss-react-ui';
+const { Tab } = Components;
+const tabOptions = [{ tabName: 'first', content: 123, isActive: true },
+  { tabName: 'second', content: (<div>23<Button text="确定" type={['primary']} style={marginStyle} /></div>), isActive: false },
+  { tabName: 'thired', content: 3, isActive: false }];
+<Tab options={tabOptions} modal={'MENULEFT'} />`} />
           </Row>
           </section>
         );

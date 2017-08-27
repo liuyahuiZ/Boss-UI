@@ -43,13 +43,25 @@ class AllCompenent extends Component {
       super(props);
       this.state = {
           confirmDirty: false,
+          
       };
     }
-      
+    checkSystem(style) {
+        if(/macintosh|mac os x/i.test(navigator.userAgent)){
+            style = utils.array.merge([style, styles.overflow])
+        } else if (/windows|win32|win64/i.test(navigator.userAgent)) {
+
+        } else if(/linux/i.test(navigator.userAgent)) {
+
+        }
+        return style;
+    }
     render() {
         console.log(this.props.location.pathname);
         const pathName = this.props.location.pathname
         const activeNo = pathName.split('/').pop()
+        const leftMenuStyle = this.checkSystem(styles.leftMenu)
+        const contonerStyle = this.checkSystem(styles.contoner)
         return(
             <Row >
                 <Col span={24} style={styles.title}>
@@ -57,14 +69,14 @@ class AllCompenent extends Component {
                 </Col>
                 <Col span={24}>
                     <Row >
-                        <Col span={5} style={styles.leftMenu}>
+                        <Col span={5} style={leftMenuStyle}>
                         <Tree
                             Date={menu}
                             display={'show'}
                             activeNode={activeNo}
                         />
                         </Col>
-                        <Col span={19} style={styles.contoner}>{this.props.children}</Col>
+                        <Col span={19} style={contonerStyle}>{this.props.children}</Col>
                     </Row>
                 </Col>
             </Row>
