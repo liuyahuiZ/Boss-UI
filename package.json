@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js --progress --profile --colors",
-    "start": "webpack-dev-server --host 192.168.16.91 --inline --hot  --content-base src"
+    "start": "webpack-dev-server --host localhost --inline --hot  --content-base src"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

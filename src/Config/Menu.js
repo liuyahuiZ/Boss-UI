@@ -22,6 +22,8 @@ export default [
         ]},
         {title: "Parts", key: "0-1-1", preKey: "0-1", children: [
             {title: "SearchPart", key: "0-1-1-0", preKey: "0-1-1", link: '/Parts/SearchPart'},
+            {title: "EditPart", key: "0-1-1-3", preKey: "0-1-1", link: '/Parts/EditPart'},
+            {title: "DetailPart", key: "0-1-1-4", preKey: "0-1-1", link: '/Parts/DetailPart'},
             {title: "DrawPart", key: "0-1-1-1", preKey: "0-1-1", link: '/Parts/DrawPart'},
             {title: "TransferPart", key: "0-1-1-2", preKey: "0-1-1", link: '/Parts/TransferPart'},
         ]}

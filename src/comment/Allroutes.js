@@ -21,6 +21,8 @@ import SwitchDoc from './components/Switch-doc'
 // import SearchPartDoc from './parts/SearchPart-doc'
 import DrawPartDoc from './parts/DrawPart-doc'
 import TransferPartDoc from './parts/TransferPart-doc'
+import EditPartDoc from './parts/EditPart-doc'
+import DetailPartDoc from './parts/DetailPart-doc'
 import Info from './info'
 import Logs from './logs'
 
@@ -99,6 +101,8 @@ class MyRouter extends Component{
         <Route path={'SearchPart'} getComponent={SearchPartDoc} />
         <Route path={'DrawPart'} component={DrawPartDoc} />
         <Route path={'TransferPart'} component={TransferPartDoc} />
+        <Route path={'EditPart'} component={EditPartDoc} />
+        <Route path={'DetailPart'} component={DetailPartDoc} />
       </Route>
     </Router>
     )
