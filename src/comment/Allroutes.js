@@ -18,6 +18,8 @@ import LabelDoc from './components/Label-doc'
 import CarouselDoc from './components/Carousel-doc'
 import FileUpDoc from './components/FileUp-doc'
 import SwitchDoc from './components/Switch-doc'
+import MenuDoc from './components/Menu-doc'
+import PopOverDoc from './components/PopOver-doc'
 // import SearchPartDoc from './parts/SearchPart-doc'
 import DrawPartDoc from './parts/DrawPart-doc'
 import TransferPartDoc from './parts/TransferPart-doc'
@@ -97,6 +99,8 @@ class MyRouter extends Component{
         <Route path={'Tree'} getComponent={TreeDoc} />
         <Route path={'Carousel'} component={CarouselDoc} />
         <Route path={'FileUp'} component={FileUpDoc} />
+        <Route path={'Menu'} component={MenuDoc} />
+        <Route path={'PopOver'} component={PopOverDoc} />
       </Route>
       <Route path={'Parts'} component={AllComponent} >
         <Route path={'SearchPart'} getComponent={SearchPartDoc} />
