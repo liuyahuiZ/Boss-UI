@@ -56,6 +56,7 @@ class Logs extends Component {
     }
       
     render() {
+        const marginStyle = {marginTop: '20px' }
         return(
           <section className="doc">
             <Row>
@@ -63,7 +64,16 @@ class Logs extends Component {
                 <h2>更新日志</h2>
             </Col>
             <Col span={24}>
-                <div>当前最新版本1.0.6</div>
+                <div>当前最新版本1.1.0</div>
+                <div>该版本新增动效和loading</div>
+            </Col>
+            <Col span={24}>
+                <div>版本1.0.8</div>
+                <div>该版本新增Menu和PopOver组件，修复一些ListPart的bug</div>
+            </Col>
+            <Col span={24} style={marginStyle}>
+                <div>版本1.0.7</div>
+                <div>该版本新增ListPart组件，修复一些bug</div>
             </Col>
           </Row>
         </section>

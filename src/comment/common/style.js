@@ -27,7 +27,7 @@ export default {
   },
   codeBox: {
     marginTop: '2%',
-    padding: '2%',
+    padding: '10px 10px',
     border: '1px solid #eee',
     borderRadius: '3px'
   },

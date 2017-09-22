@@ -184,7 +184,7 @@ const { Menu } = Components;
             </Col>
             <Col span={24} style={styles.codeBox}>
               <Row>
-                <Col span={24}>
+                <Col span={24} style={{marginBottom: '10px'}}>
                   <Buttons
                     text={'Toggle'}
                     type={'primary'}
@@ -218,7 +218,7 @@ const { Menu } = Components;
             </Col>
             <Col span={24} style={styles.codeBox}>
               <Row>
-                <Col span={24}>
+                <Col span={24} style={{marginBottom: '10px'}}>
                   <Buttons
                     text={'Toggle Theme'}
                     type={'primary'}

@@ -361,6 +361,27 @@ const { Buttons, Loader } = Components;
     Loader.hide();
   }}
 />`} />
+            <Col span={24}>
+              <h3>progressLoading</h3>
+            </Col>
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
+                text="Loader show"
+                type={'primary'}
+                style={marginStyle}
+                onClick={() => {
+                  Loader.showProgress();
+                }}
+              />
+              <Buttons
+                text="Loader Hide"
+                type={'primary'}
+                style={marginStyle}
+                onClick={() => {
+                  Loader.hideProgress();
+                }}
+              />
+            </Col>
           </Row>
         </section>
         );
