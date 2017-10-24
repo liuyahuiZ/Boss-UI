@@ -27,8 +27,8 @@ const gData = [
         preKey: '0-1',
         iconName: 'cube',
         children: [
-          { title: 'Grid', key: '0-1-0-15', preKey: '0-1-0' },
-          { title: 'Button', key: '0-1-0-0', preKey: '0-1-0' },
+          { title: 'Grid', key: '0-1-0-15', preKey: '0-1-0', otherName: 'Grid' },
+          { title: 'Button', key: '0-1-0-0', preKey: '0-1-0', otherName: 'Button' },
           { title: 'Input', key: '0-1-0-1', preKey: '0-1-0' },
           { title: 'DatePicker', key: '0-1-0-2', preKey: '0-1-0' },
           { title: 'Select', key: '0-1-0-4', preKey: '0-1-0' },

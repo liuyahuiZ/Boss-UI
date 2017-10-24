@@ -57,6 +57,7 @@ class Bottons extends Component {
     }
       
     render() {
+      const icon = (<Icon iconName={'person'} iconColor={'color'} size={'120%'}/>);
         return(
           <section className="doc">
             <Row>
@@ -198,7 +199,10 @@ size是按钮的大小，plain是按钮背景色为空`} />
   style={marginStyle}
   type={'primary'}
   size={'small'}
-/>`} />             
+/>`} />         
+            <Col span={24}>
+                <h3>幽灵按钮</h3>
+            </Col>    
             <Col span={24} style={styles.codeBox}>
               <Buttons
                 text="大型按钮"
@@ -241,6 +245,9 @@ size是按钮的大小，plain是按钮背景色为空`} />
   size={'small'}
   plain
 />`} />
+            <Col span={24}>
+                <h3>文字按钮</h3>
+            </Col> 
             <Col span={24} style={styles.codeBox}>
               <Buttons
                 text="大型按钮"
@@ -277,6 +284,29 @@ size是按钮的大小，plain是按钮背景色为空`} />
   type={'link'}
   size={'small'}
 />`} />
+            <Col span={24}>
+                <h3>Icon按钮</h3>
+            </Col> 
+            <Col span={24} style={styles.codeBox}>
+              <Buttons
+                text={(<span>{icon}123</span>)}
+                style={marginStyle}
+                type={'primary'}
+                size={'large'}
+              />
+              <Buttons
+                text={(<span>{icon}456</span>)}
+                style={marginStyle}
+                type={'primary'}
+                plain
+              />
+              <Buttons
+              text={(<span>{icon}789</span>)}
+                style={marginStyle}
+                type={'link'}
+                size={'small'}
+              />
+            </Col>
             <Col span={24}>
                 <h3>不同颜色</h3>
                 <div>Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸</div>

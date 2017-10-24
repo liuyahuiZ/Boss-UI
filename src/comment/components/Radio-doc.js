@@ -47,6 +47,9 @@ const {
   } = Components;
   
 const { SearchPart, TablePart, DrawPart, EditPart, TransferPart } = Parts;
+const radioclick = function (value) {
+  console.log(value);
+};
 class RadioDoc extends Component {
     constructor(props) {
       super(props);
@@ -56,7 +59,7 @@ class RadioDoc extends Component {
     }
       
     render() {
-        const checkboxOptions = [{ value: 1, text: 'haha', checked: true }, { value: 2, text: 'haha2' }, { value: 3, text: 'haha3', disabled: true }];
+        const checkboxOptions = [{ value: 1, text: 'JAVA', checked: true }, { value: 2, text: 'PHP' }, { value: 3, text: 'C++', disabled: true }];
         return(
             <section className="doc">
             <Row>
@@ -69,7 +72,7 @@ class RadioDoc extends Component {
             </Col>
             <Col span={24} style={styles.codeBox}>
             <Radio
-                options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2', checked: true }]}
+                options={[{ value: 1, text: 'js' }, { value: 2, text: 'Jquery', checked: true }, { value: 3, text: 'Angular', disabled: true },{ value: 4, text: 'react' } ]}
                 onChange={click}
             />
             </Col>
@@ -99,7 +102,60 @@ const { Checkbox } = Components;
   ref={(checkbox) => { dom.checkbox = checkbox; }}
   options={checkboxOptions}
   onChange={click}
+/>`} />     
+            <Col span={24}>
+              <h3>全选用法</h3>
+            </Col>
+            <Col style={styles.codeBox}>
+              <Row>
+                <Col >
+                  <Checkbox
+                    options={[{ value: '1', text: '全选' }]}
+                    onChange={(data) => {
+                      console.log(data);
+                      if (data[1].checkStatus === 'checked') {
+                        this.$$checkbox2.checkAll(true);
+                      } else {
+                        this.$$checkbox2.checkAll(false);
+                      }
+                    }}
+                    ref={(r) => { this.$$checkbox1 = r; }}
+                  />
+                </Col>
+                <Col>
+                  <Checkbox
+                    options={[{ value: '1', text: 'PS', checkStatus: 'checked' },
+                    { value: '2', text: 'JS' },
+                    { value: '3', text: 'CSS3', disabled: true },
+                  { value: '4', text: 'HTML5' }]}
+                    onChange={radioclick}
+                    ref={(r) => { this.$$checkbox2 = r; }}
+                  />
+                </Col>
+                <Code codes={`import { Components } from 'boss-react-ui';
+const { Checkbox } = Components;
+<Checkbox
+options={[{ value: '1', text: '全选' }]}
+onChange={(data) => {
+  console.log(data);
+  if (data[1].checkStatus === 'checked') {
+    this.$$checkbox2.checkAll(true);
+  } else {
+    this.$$checkbox2.checkAll(false);
+  }
+}}
+ref={(r) => { this.$$checkbox1 = r; }}
+/>
+<Checkbox
+options={[{ value: '1', text: 'haha', checkStatus: 'checked' },
+{ value: '2', text: 'haha2' },
+{ value: '3', text: 'haha3', disabled: true },
+{ value: '4', text: 'haha4' }]}
+onChange={radioclick}
+ref={(r) => { this.$$checkbox2 = r; }}
 />`} />
+              </Row>
+            </Col>
           </Row>
           </section>
         );

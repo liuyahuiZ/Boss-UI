@@ -21,6 +21,8 @@ import SwitchDoc from './components/Switch-doc'
 import MenuDoc from './components/Menu-doc'
 import PopOverDoc from './components/PopOver-doc'
 // import SearchPartDoc from './parts/SearchPart-doc'
+import TablePartDoc from './parts/TablePart-doc'
+import LablePartDoc from './parts/LablePart-doc'
 import DrawPartDoc from './parts/DrawPart-doc'
 import TransferPartDoc from './parts/TransferPart-doc'
 import EditPartDoc from './parts/EditPart-doc'
@@ -72,9 +74,11 @@ class MyRouter extends Component{
   render() {
     return (
     <Router history={hashHistory}>
-      <IndexRedirect to="/info/index" />
-      <Route path={'/'} component={AllComponent} />
+      <Route path={'/'} component={AllComponent} >
+        <IndexRedirect to="/info" />
+      </Route>
       <Route path={'info'} component={AllComponent} >
+        <IndexRedirect to="/info/index" />
         <Route path={'index'} component={Info} />
       </Route>
       <Route path={'logs'} component={AllComponent} >
@@ -104,11 +108,13 @@ class MyRouter extends Component{
       </Route>
       <Route path={'Parts'} component={AllComponent} >
         <Route path={'SearchPart'} getComponent={SearchPartDoc} />
+        <Route path={'TablePart'} component={TablePartDoc} />
+        <Route path={'LablePart'} component={LablePartDoc} />
         <Route path={'DrawPart'} component={DrawPartDoc} />
         <Route path={'TransferPart'} component={TransferPartDoc} />
         <Route path={'EditPart'} component={EditPartDoc} />
         <Route path={'DetailPart'} component={DetailPartDoc} />
-	<Route path={'ListPart'} component={ListPartDoc} />
+	      <Route path={'ListPart'} component={ListPartDoc} />
      </Route>
     </Router>
     )

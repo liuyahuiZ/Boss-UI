@@ -104,6 +104,34 @@ maxLength={10}
   maxLength={100}
 />`} />
             <Col span={24}>
+              <h3>带有Icon的Input</h3>
+            </Col>
+            <Col style={styles.codeBox}>
+              <Input
+              placeholder="我是placeholder"
+              style={marginStyle}
+              maxLength={10}
+              maxLengthShow={false}
+              icon={{
+                  iconName: 'person',
+                  color: '#000',
+                  size: '100%'
+                }}
+              />
+              <Input
+                placeholder="请输入密码"
+                maxLength={100}
+                maxLengthShow={false}
+                style={marginStyle}
+                type={'password'}
+                icon={{
+                  iconName: 'android-lock',
+                  color: '#000',
+                  size: '100%'
+                }}
+              />
+            </Col>
+            <Col span={24}>
               <h3>禁用状态</h3>
             </Col>
             <Col style={styles.codeBox}>

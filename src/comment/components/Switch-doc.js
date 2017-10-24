@@ -75,19 +75,19 @@ class SwitchDoc extends Component {
                   <Switch />
                 </Col>
                 <Col span={3}>
-                  <Switch checkedText={0} unCheckText={1} checked />
+                  <Switch checkedText={0} unCheckText={1} value={true} />
                 </Col>
                 <Col span={3}>
                   <Switch checkedText={'-'} unCheckText={'o'} onchange={switchChange} />
                 </Col>
                 <Col span={3}>
-                  <Switch checkedText={0} unCheckText={1} bgColor={'#4BD963'} checked />
+                  <Switch checkedText={0} unCheckText={1} bgColor={'#4BD963'} value={true} />
                 </Col>
                 <Col span={3}>
-                  <Switch checkedText={0} unCheckText={1} bgColor={'#FF6157'} checked />
+                  <Switch checkedText={0} unCheckText={1} bgColor={'#FF6157'} value={true} />
                 </Col>
                 <Col span={3}>
-                  <Switch checkedText={0} unCheckText={1} bgColor={'#FFD479'} checked />
+                  <Switch checkedText={0} unCheckText={1} bgColor={'#FFD479'} value={true} />
                 </Col>
                 </Row>
               </Col>

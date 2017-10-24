@@ -28,7 +28,9 @@ export default [
             {title: "DetailPart", key: "0-1-1-4", preKey: "0-1-1", link: '/Parts/DetailPart'},
             {title: "DrawPart", key: "0-1-1-1", preKey: "0-1-1", link: '/Parts/DrawPart'},
             {title: "TransferPart", key: "0-1-1-2", preKey: "0-1-1", link: '/Parts/TransferPart'},
-	    {title: "ListPart", key: "0-1-1-5", preKey: "0-1-1", link: '/Parts/ListPart'},
+            {title: "ListPart", key: "0-1-1-5", preKey: "0-1-1", link: '/Parts/ListPart'},
+            {title: "TablePart", key: "0-1-1-6", preKey: "0-1-1", link: '/Parts/TablePart'},
+            {title: "LablePart", key: "0-1-1-7", preKey: "0-1-1", link: '/Parts/LablePart'},
         ]}
     ] },
     {title: "更新日志", key: "0-2", preKey: "0", link: '/logs/index'},

@@ -58,15 +58,53 @@ class TransferPartDoc extends Component {
       
     render() {
       const transferOptions = {
-        list: [
-          { name: 'item1', value: '1,2,3,4,5,6,7' },
-          { name: 'item1', value: '2,1,3,4,5,6,7' },
-          { name: 'item1', value: '3,2,1,4,5,6,7' },
-          { name: 'item1', value: '4,3,2,1,5,6,7' },
-          { name: 'item1', value: '5,4,3,2,1,6,7' },
-          { name: 'item1', value: '6,5,4,3,2,1,7' },
-          { name: 'item1', value: '7,6,5,4,3,2,1' }
-        ]
+        list: [{
+          param: 'aa',
+          name: '参树1',
+          desc: '说明1',
+          status: '未使用',
+        }, {
+          param: 'bb',
+          name: '参树2',
+          desc: '说明2',
+          status: '已使用',
+        }, {
+          param: 'cc',
+          name: '参树3',
+          desc: '说明3',
+          status: '未使用',
+        }, {
+          param: 'dd',
+          name: '参树4',
+          desc: '说明4',
+          status: '已使用',
+        }],
+        leftKeys: [{
+          name: '参数',
+          key: 'param',
+        }, {
+          name: '参数名称',
+          key: 'name',
+        }, {
+          name: '参数名称',
+          key: 'desc',
+        }],
+        rightKeys: [{
+          name: '参数',
+          key: 'param',
+        }, {
+          name: '参数名称',
+          key: 'name',
+        }, {
+          name: '参数名称',
+          key: 'desc',
+        }, {
+          name: '状态',
+          key: 'status',
+        }],
+        uniqKey: 'param',
+        searchKeys: ['param', 'name'],
+        rightSearchKeys: ['status'],
       };
         return(
           <section className="doc">
@@ -77,21 +115,59 @@ class TransferPartDoc extends Component {
             <Col span={24}>
               <h3>基础用法</h3>
             </Col>
-            <Col span={16} style={styles.codeBox}>
+            <Col span={24} style={styles.codeBox}>
             <TransferPart {...transferOptions} />
             </Col>
             <Code codes={`import { Parts } from 'boss-react-ui';
 const { TransferPart } = Parts;
 const transferOptions = {
-  list: [
-    { name: 'item1', value: '1,2,3,4,5,6,7' },
-    { name: 'item1', value: '2,1,3,4,5,6,7' },
-    { name: 'item1', value: '3,2,1,4,5,6,7' },
-    { name: 'item1', value: '4,3,2,1,5,6,7' },
-    { name: 'item1', value: '5,4,3,2,1,6,7' },
-    { name: 'item1', value: '6,5,4,3,2,1,7' },
-    { name: 'item1', value: '7,6,5,4,3,2,1' }
-  ]
+  list: [{
+    param: 'aa',
+    name: '参树1',
+    desc: '说明1',
+    status: '未使用',
+  }, {
+    param: 'bb',
+    name: '参树2',
+    desc: '说明2',
+    status: '已使用',
+  }, {
+    param: 'cc',
+    name: '参树3',
+    desc: '说明3',
+    status: '未使用',
+  }, {
+    param: 'dd',
+    name: '参树4',
+    desc: '说明4',
+    status: '已使用',
+  }],
+  leftKeys: [{
+    name: '参数',
+    key: 'param',
+  }, {
+    name: '参数名称',
+    key: 'name',
+  }, {
+    name: '参数名称',
+    key: 'desc',
+  }],
+  rightKeys: [{
+    name: '参数',
+    key: 'param',
+  }, {
+    name: '参数名称',
+    key: 'name',
+  }, {
+    name: '参数名称',
+    key: 'desc',
+  }, {
+    name: '状态',
+    key: 'status',
+  }],
+  uniqKey: 'param',
+  searchKeys: ['param', 'name'],
+  rightSearchKeys: ['status'],
 };
 <TransferPart {...transferOptions} />`} />
           </Row>

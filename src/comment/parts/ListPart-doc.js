@@ -53,9 +53,106 @@ class ListPartDoc extends Component {
       super(props);
       this.state = {
           confirmDirty: false,
+          newlistOperation:[],
+          newlistData: []
       };
     }
-      
+    componentWillMount() {
+      this.initData();
+    }
+    initData() {
+      const listOperations = {
+        listFormat: [{
+          key: 'area',
+          title: '总评分',
+          titleStyle: { width: '200px', maxWidth: '200px' },
+          items: [{
+            key: 'small',
+            type: 'Input',
+            info: '左侧下限',
+            titleStyle: { width: '100px', maxWidth: '100px' },
+            style: { width: '80px' },
+            maxLengthShow: false,
+            change: (item, val, rowIdx) => {
+              // console.log(item, val, rowIdx);
+              this.$$newListPart.changeArr(rowIdx, item.key, val, item.parentKey);
+            },
+          }, {
+            key: 'large',
+            type: 'Input',
+            info: '右侧下限',
+            titleStyle: { width: '100px', maxWidth: '100px' },
+            style: { width: '80px' },
+            maxLengthShow: false,
+            change: (item, val, rowIdx) => {
+              // console.log(item, val, rowIdx);
+              this.$$newListPart.changeArr(rowIdx, item.key, val, item.parentKey);
+            },
+          }]
+        }, {
+          key: 'processName',
+          title: '额度',
+          info: '(maQuota)',
+          titleStyle: { width: '100px', maxWidth: '100px' },
+          type: 'Input',
+          style: { width: '100px', maxWidth: '100px' },
+          maxLengthShow: false,
+          change: (item, val, rowIdx) => {
+            // console.log(item, val, rowIdx);
+            this.$$newListPart.changeArr(rowIdx, item.key, val, item.parentKey);
+          },
+        }],
+        operations: [{
+          text: '删除',
+          func: (idx, item, surchFun) => {
+            console.log(idx, item, 'commit', surchFun);
+            this.$$newListPart.rmMsg(item.id);
+          },
+          action: 'delete',
+        }],
+      };
+      this.setState({
+        newlistOperation: listOperations
+      });
+    }
+    addListData() {
+      const newOperation = this.state.newlistOperation;
+      const keys = `${newOperation.listFormat.length}-op`;
+      const name = `总额-${newOperation.listFormat.length}`;
+      const items = {
+        key: keys,
+        title: name,
+        canDelete: true,
+        titleStyle: { width: '200px', maxWidth: '200px' },
+        items: [{
+          key: `${newOperation.listFormat.length}-small`,
+          type: 'Input',
+          info: '左侧下限',
+          titleStyle: { width: '100px', maxWidth: '100px' },
+          style: { width: '80px' },
+          maxLengthShow: false,
+          change: (item, val, rowIdx) => {
+            // console.log(item, val, rowIdx);
+            this.$$newListPart.changeArr(rowIdx, item.key, val, item.parentKey);
+          },
+        }, {
+          key: `${newOperation.listFormat.length}-large`,
+          type: 'Input',
+          info: '右侧下限',
+          titleStyle: { width: '100px', maxWidth: '100px' },
+          style: { width: '80px' },
+          maxLengthShow: false,
+          change: (item, val, rowIdx) => {
+            // console.log(item, val, rowIdx);
+            this.$$newListPart.changeArr(rowIdx, item.key, val, item.parentKey);
+          },
+        }]
+      };
+      newOperation.listFormat.push(items);
+      this.setState({
+        newlistOperation: newOperation
+      });
+    }
     render() {
       const listOperation = {
         listFormat: [{
@@ -317,6 +414,36 @@ const listDatas = [{ id: 1, requestId: 'tex1', userName: 'text1', checked: true,
   type={'primary'}
   onClick={() => { const value = this.$$ListPart.getValue(); console.log(value); }}
 />`} />
+          <Col span={24}>
+            <div>可增加列</div>
+          </Col>
+          <Col style={styles.codeBox}>
+            <Row>
+            <Col span={24} >
+            <Buttons
+              text="新增行"
+              type={'primary'}
+              size={'small'}
+              style={{ position: 'relative', top: '10px', marginLeft: '10px' }}
+              onClick={() => { this.$$newListPart.add(); }}
+            />
+            <Buttons
+              text="+新增交叉变量"
+              type={'primary'}
+              style={{ position: 'relative', top: '10px', marginLeft: '10px' }}
+              onClick={() => { this.addListData(); }}
+            />
+          </Col>
+          <Col span={24} style={{marginTop: '20px'}}>
+            <ListPart
+                  listOperation={this.state.newlistOperation}
+                  listData={this.state.newlistData}
+                  ref={(r) => { this.$$newListPart = r; }}
+                  showInfo
+                />
+          </Col>
+            </Row>
+          </Col>
             
           </Row>
         </section>

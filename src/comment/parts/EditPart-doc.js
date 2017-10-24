@@ -46,7 +46,7 @@ const {
     Switch
   } = Components;
   
-const { SearchPart, TablePart, DrawPart, EditPart, TransferPart } = Parts;
+const { SearchPart, TablePart, DrawPart, EditPart, EditConditionPart } = Parts;
 class EditPartDoc extends Component {
     constructor(props) {
       super(props);
@@ -63,6 +63,7 @@ class EditPartDoc extends Component {
         options: [{ value: '', text: '请选择' }, { value: 'jingu', text: '金谷农商行' }],
         valid: 'required',
         errorMsg: '请选择银行渠道',
+        style: { width: '200px' }
       }, {
         key: 'loanProductType',
         text: '贷款产品类型',
@@ -74,6 +75,7 @@ class EditPartDoc extends Component {
         }],
         valid: 'required',
         errorMsg: '请选择贷款产品类型',
+        style: { width: '200px' }
       }, {
         key: 'loanProductName',
         text: '贷款产品名称',
@@ -130,10 +132,11 @@ class EditPartDoc extends Component {
             <h2>EditPart 编辑框组合</h2>
           </Col>
           <Col span={24}>
-            <h3>基础用法</h3>
+            <h3>基本用法</h3>
+            <div>组件每一行的有内部元素撑起</div>
           </Col>
           <Col span={24} style={styles.codeBox}>
-          <EditPart
+          <EditConditionPart
             editItemList={editItemList}
             ref={(ref) => {
               self.editPart = ref;
@@ -208,6 +211,25 @@ const editItemList = [{
         valid: val => (val && +new Date(val) >= +new Date()),
         errorMsg: '结束放贷时间不得小于当前时间',
       }];
+      <EditConditionPart
+      editItemList={editItemList}
+      ref={(ref) => {
+        self.editPart = ref;
+      }}
+    />`} />
+          <Col span={24}>
+            <h3>旧版用法</h3>
+            <div>组件中每个内部元素占用一行</div>
+          </Col>
+          <Col span={24} style={styles.codeBox}>
+          <EditPart
+            editItemList={editItemList}
+            ref={(ref) => {
+              self.editPart = ref;
+            }}
+          />
+          </Col>
+          <Code codes={`
 <EditPart
   editItemList={editItemList}
   ref={(ref) => {
