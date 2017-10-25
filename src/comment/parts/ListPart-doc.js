@@ -420,31 +420,50 @@ const listDatas = [{ id: 1, requestId: 'tex1', userName: 'text1', checked: true,
           <Col style={styles.codeBox}>
             <Row>
             <Col span={24} >
-            <Buttons
-              text="新增行"
-              type={'primary'}
-              size={'small'}
-              style={{ position: 'relative', top: '10px', marginLeft: '10px' }}
-              onClick={() => { this.$$newListPart.add(); }}
-            />
-            <Buttons
-              text="+新增交叉变量"
-              type={'primary'}
-              style={{ position: 'relative', top: '10px', marginLeft: '10px' }}
-              onClick={() => { this.addListData(); }}
-            />
-          </Col>
-          <Col span={24} style={{marginTop: '20px'}}>
-            <ListPart
-                  listOperation={this.state.newlistOperation}
-                  listData={this.state.newlistData}
-                  ref={(r) => { this.$$newListPart = r; }}
-                  showInfo
-                />
-          </Col>
+              <Buttons
+                text="新增行"
+                type={'primary'}
+                size={'small'}
+                style={{ position: 'relative', top: '10px', marginLeft: '10px' }}
+                onClick={() => { this.$$newListPart.add(); }}
+              />
+              <Buttons
+                text="+新增交叉变量"
+                type={'primary'}
+                style={{ position: 'relative', top: '10px', marginLeft: '10px' }}
+                onClick={() => { this.addListData(); }}
+              />
+            </Col>
+            <Col span={24} style={{marginTop: '20px'}}>
+              <ListPart
+                    listOperation={this.state.newlistOperation}
+                    listData={this.state.newlistData}
+                    ref={(r) => { this.$$newListPart = r; }}
+                    showInfo
+                  />
+            </Col>
             </Row>
           </Col>
-            
+          <Code codes={`
+<Buttons
+text="新增行"
+type={'primary'}
+size={'small'}
+style={{ position: 'relative', top: '10px', marginLeft: '10px' }}
+onClick={() => { this.$$newListPart.add(); }}
+/>
+<Buttons
+text="+新增交叉变量"
+type={'primary'}
+style={{ position: 'relative', top: '10px', marginLeft: '10px' }}
+onClick={() => { this.addListData(); }}
+/>
+<ListPart
+listOperation={this.state.newlistOperation}
+listData={this.state.newlistData}
+ref={(r) => { this.$$newListPart = r; }}
+showInfo
+/>`} />
           </Row>
         </section>
         );

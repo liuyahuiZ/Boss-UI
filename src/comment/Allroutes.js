@@ -20,6 +20,7 @@ import FileUpDoc from './components/FileUp-doc'
 import SwitchDoc from './components/Switch-doc'
 import MenuDoc from './components/Menu-doc'
 import PopOverDoc from './components/PopOver-doc'
+import VerifyCodeDoc from './components/VerifyCode-doc'
 // import SearchPartDoc from './parts/SearchPart-doc'
 import TablePartDoc from './parts/TablePart-doc'
 import LablePartDoc from './parts/LablePart-doc'
@@ -105,6 +106,7 @@ class MyRouter extends Component{
         <Route path={'FileUp'} component={FileUpDoc} />
         <Route path={'Menu'} component={MenuDoc} />
         <Route path={'PopOver'} component={PopOverDoc} />
+        <Route path={'VerifyCode'} component={VerifyCodeDoc} />
       </Route>
       <Route path={'Parts'} component={AllComponent} >
         <Route path={'SearchPart'} getComponent={SearchPartDoc} />

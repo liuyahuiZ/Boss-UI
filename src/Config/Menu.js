@@ -21,6 +21,7 @@ export default [
             {title: "FileUp", key: "0-1-0-14", preKey: "0-1-0", link: '/component/FileUp'},
             {title: "Menu", key: "0-1-0-17", preKey: "0-1-0", link: '/component/Menu'},
             {title: "PopOver", key: "0-1-0-18", preKey: "0-1-0", link: '/component/PopOver'},
+            {title: "VerifyCode", key: "0-1-0-19", preKey: "0-1-0", link: '/component/VerifyCode'},
         ]},
         {title: "Parts", key: "0-1-1", preKey: "0-1", children: [
             {title: "SearchPart", key: "0-1-1-0", preKey: "0-1-1", link: '/Parts/SearchPart'},

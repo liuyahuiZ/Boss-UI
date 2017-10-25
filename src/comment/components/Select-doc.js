@@ -72,11 +72,13 @@ class SelectDoc extends Component {
                 <Select
                   style={marginStyle}
                   options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2' }]}
+                  value={1}
                 />
               </Col>
               <Col span={12}>
                 <Selects
                   style={marginStyle}
+                  value={4}
                   options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2123123123123123123123123123123' },
                   { value: 3, text: 'haha' }, { value: 4, text: 'haha2' },
                   { value: 6, text: 'haha' }, { value: 5, text: 'haha2' },
@@ -87,6 +89,7 @@ class SelectDoc extends Component {
               <Col span={12}>
                 <Selects
                   style={{ width: '200px', margin: '10px' }}
+                  value={1}
                   options={[{ value: 1, text: 'haha' }, { value: 2, text: 'haha2' },
                   { value: 3, text: 'haha3' }, { value: 4, text: 'haha4' }]}
                 />
